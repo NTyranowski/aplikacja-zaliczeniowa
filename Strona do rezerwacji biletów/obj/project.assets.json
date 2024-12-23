@@ -4557,11 +4557,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nikof\\OneDrive\\Pulpit\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
+      "projectUniqueName": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
       "projectName": "Strona do rezerwacji biletów",
-      "projectPath": "C:\\Users\\nikof\\OneDrive\\Pulpit\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
+      "projectPath": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
       "packagesPath": "C:\\Users\\nikof\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nikof\\OneDrive\\Pulpit\\Strona do rezerwacji biletów\\obj\\",
+      "outputPath": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nikof\\AppData\\Roaming\\NuGet\\NuGet.Config",
