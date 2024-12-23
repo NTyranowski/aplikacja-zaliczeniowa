@@ -1,8 +1,15 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<Strona_do_rezerwacji_biletów.Models.Event>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Events</h1>
+<ul>
+    @foreach (var ev in Model)
+    {
+        <li>
+            <h3>@ev.Title</h3>
+            <p>@ev.Description</p>
+            <p>Category: @ev.Category</p>
+            <p>Available Seats: @ev.AvailableSeats</p>
+            <a href="/Events/Reserve/@ev.Id">Reserve</a>
+        </li>
+    }
+</ul>

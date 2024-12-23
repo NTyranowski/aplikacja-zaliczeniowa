@@ -15,7 +15,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Events");
         }
 
         public IActionResult Privacy()

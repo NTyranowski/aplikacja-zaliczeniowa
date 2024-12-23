@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Strona_do_rezerwacji_biletów.Data;
 using System;
 using System.Collections.Generic;
@@ -13,16 +14,20 @@ namespace Strona_do_rezerwacji_biletów
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Konfiguracja bazy danych
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseInMemoryDatabase("TicketBookingDb"));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            // Konfiguracja tożsamości
+            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            // Dodanie MVC
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
+            // Middleware
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
