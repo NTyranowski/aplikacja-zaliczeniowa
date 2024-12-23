@@ -14,20 +14,18 @@ namespace Strona_do_rezerwacji_biletów
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Konfiguracja bazy danych
+            // Konfiguracja bazy danych PostgreSQL
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Konfiguracja tożsamości
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            // Dodanie MVC
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
-            // Middleware
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -43,7 +41,7 @@ namespace Strona_do_rezerwacji_biletów
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Events}/{action=Index}/{id?}");
             app.MapRazorPages();
 
             app.Run();

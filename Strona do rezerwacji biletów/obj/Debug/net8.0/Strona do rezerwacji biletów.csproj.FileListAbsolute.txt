@@ -144,3 +144,34 @@ C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji bilet
 C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\obj\Debug\net8.0\Strona do rezerwacji biletów.pdb
 C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\obj\Debug\net8.0\Strona do rezerwacji biletów.genruntimeconfig.cache
 C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\obj\Debug\net8.0\ref\Strona do rezerwacji biletów.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Npgsql.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
