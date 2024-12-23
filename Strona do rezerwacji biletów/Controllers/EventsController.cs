@@ -31,6 +31,16 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return View(ev);
         }
+        public IActionResult Details(int id)
+        {
+            var ev = _context.Events.FirstOrDefault(e => e.Id == id);
+            if (ev == null)
+            {
+                return NotFound();
+            }
+
+            return View(ev);
+        }
 
         [HttpPost]
         public IActionResult Reserve(int eventId, int seatsReserved)
@@ -51,5 +61,6 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return RedirectToAction("Index");
         }
+
     }
 }

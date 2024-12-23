@@ -1,0 +1,13 @@
+﻿@model Strona_do_rezerwacji_biletów.Models.Event
+
+@{
+    ViewData["Title"] = "Event Details";
+}
+
+<h1>@Model.Title</h1>
+<p><strong>Date:</strong> @Model.Date.ToString("yyyy-MM-dd HH:mm")</p>
+<p><strong>Description:</strong> @Model.Description</p>
+<p><strong>Category:</strong> @Model.Category</p>
+<p><strong>Available Seats:</strong> @Model.AvailableSeats</p>
+
+<a href="@Url.Action("Index", "Events")" class="btn btn-secondary">Back to Events</a>
