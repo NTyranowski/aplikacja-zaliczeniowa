@@ -31,11 +31,11 @@
                 </td>
             </tr>
         }
-        if (!Model.Any())
+        @if(!Model.Any())
         {
-        <tr>
-            <td colspan="6" class="text-center">No events available.</td>
-        </tr>
+            <tr>
+                <td colspan="6" class="text-center">No events available.</td>
+            </tr>
         }
     </tbody>
 </table>
