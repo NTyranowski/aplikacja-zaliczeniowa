@@ -37,7 +37,7 @@
                         </a>
                         @if (Model.AvailableSeats > 0)
                         {
-                            <form asp-action="Reserve" asp-route-id="@Model.Id" method="post">
+                            <form asp-action="Reserve" asp-route-id="@Model.Id" method="get">
                                 <button type="submit" class="btn btn-primary">Reserve Now</button>
                             </form>
                         }
