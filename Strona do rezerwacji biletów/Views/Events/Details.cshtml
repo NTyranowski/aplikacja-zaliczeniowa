@@ -4,10 +4,46 @@
     ViewData["Title"] = "Event Details";
 }
 
-<h1>@Model.Title</h1>
-<p><strong>Date:</strong> @Model.Date.ToString("yyyy-MM-dd HH:mm")</p>
-<p><strong>Description:</strong> @Model.Description</p>
-<p><strong>Category:</strong> @Model.Category</p>
-<p><strong>Available Seats:</strong> @Model.AvailableSeats</p>
-
-<a href="@Url.Action("Index", "Events")" class="btn btn-secondary">Back to Events</a>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title text-center">@Model.Title</h1>
+                    <hr>
+                    <p class="card-text">
+                        <strong>Date:</strong> @Model.Date.ToString("yyyy-MM-dd HH:mm")
+                    </p>
+                    <p class="card-text">
+                        <strong>Description:</strong> @Model.Description
+                    </p>
+                    <p class="card-text">
+                        <strong>Category:</strong> @Model.Category
+                    </p>
+                    <p class="card-text">
+                        <strong>Available Seats:</strong>
+                        @if (Model.AvailableSeats > 0)
+                        {
+                            <span class="text-success">@Model.AvailableSeats</span>
+                        }
+                        else
+                        {
+                            <span class="text-danger">No seats available</span>
+                        }
+                    </p>
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="@Url.Action("Index", "Events")" class="btn btn-secondary">
+                            Back to Events
+                        </a>
+                        @if (Model.AvailableSeats > 0)
+                        {
+                            <form asp-action="Reserve" asp-route-id="@Model.Id" method="post">
+                                <button type="submit" class="btn btn-primary">Reserve Now</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

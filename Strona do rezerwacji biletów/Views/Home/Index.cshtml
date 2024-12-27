@@ -1,41 +1,45 @@
 ﻿@model IEnumerable<Strona_do_rezerwacji_biletów.Models.Event>
 
 @{
-    ViewData["Title"] = "Events";
+    ViewData["Title"] = "Available Events";
 }
 
-<h1>Available Events</h1>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Available Seats</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var ev in Model)
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Available Events</h1>
+    <div class="row">
+        @if (Model.Any())
         {
-            <tr>
-                <td>@ev.Title</td>
-                <td>@ev.Date.ToString("yyyy-MM-dd HH:mm")</td>
-                <td>@ev.Description</td>
-                <td>@ev.Category</td>
-                <td>@ev.AvailableSeats</td>
-                <td>
-                    <a href="@Url.Action("Details", "Events", new { id = ev.Id })" class="btn btn-primary">Details</a>
-                </td>
-            </tr>
+            @foreach (var ev in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@ev.Title</h5>
+                            <p class="card-text text-muted">
+                                <strong>Date:</strong> @ev.Date.ToString("yyyy-MM-dd HH:mm")
+                            </p>
+                            <p class="card-text">
+                                <strong>Category:</strong> @ev.Category
+                            </p>
+                            <p class="card-text text-truncate">
+                                @ev.Description
+                            </p>
+                            <p class="card-text">
+                                <strong>Available Seats:</strong> @ev.AvailableSeats
+                            </p>
+                            <a href="@Url.Action("Details", "Events", new { id = ev.Id })" class="btn btn-primary w-100">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
         }
-        @if(!Model.Any())
+        else
         {
-            <tr>
-                <td colspan="6" class="text-center">No events available.</td>
-            </tr>
+            <div class="col-12 text-center">
+                <p class="text-muted">No events available at the moment. Please check back later.</p>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+</div>

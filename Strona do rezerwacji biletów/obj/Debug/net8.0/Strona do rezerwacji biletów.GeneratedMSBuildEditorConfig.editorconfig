@@ -17,59 +17,63 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Strona_do_rezerwacji_biletów
 build_property.RootNamespace = Strona_do_rezerwacji_biletów
-build_property.ProjectDir = C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\
+build_property.ProjectDir = C:\Users\Bartek\Desktop\aplikacja-zaliczeniowa-main\aplikacja-zaliczeniowa-main\Strona do rezerwacji biletów\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów
+build_property.MSBuildProjectDirectory = C:\Users\Bartek\Desktop\aplikacja-zaliczeniowa-main\aplikacja-zaliczeniowa-main\Strona do rezerwacji biletów
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Events/Details.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/Events/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Events/Index.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/Events/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Events/Reserve.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/Events/Reserve.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXFJlc2VydmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Home/Index.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Home/Privacy.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/Home/MyReservations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVJlc2VydmF0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Shared/Error.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/_ViewImports.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/_ViewStart.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Shared/_Layout.cshtml]
+[C:/Users/Bartek/Desktop/aplikacja-zaliczeniowa-main/aplikacja-zaliczeniowa-main/Strona do rezerwacji biletów/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-88rsueg5wp

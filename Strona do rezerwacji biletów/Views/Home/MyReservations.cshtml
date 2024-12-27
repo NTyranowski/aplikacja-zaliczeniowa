@@ -1,0 +1,74 @@
+﻿@using Strona_do_rezerwacji_biletów.Models.Event;
+
+@model IEnumerable<Strona_do_rezerwacji_biletów.Models.Reservation>
+
+@{
+    ViewData["Title"] = "My Reservations";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">My Reservations</h1>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning text-center">
+            <strong>You have no reservations yet.</strong>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Event</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Seats Reserved</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var reservation in Model)
+                    {
+                        <tr>
+                            <td>@reservation.Event.Title</td>
+                            <td>@reservation.Event.Date.ToString("yyyy-MM-dd HH:mm")</td>
+                            <td>@reservation.Event.Category</td>
+                            <td>@reservation.SeatsReserved</td>
+                            <td>
+                                <a asp-action="Details" asp-controller="Events" asp-route-id="@reservation.Event.Id" class="btn btn-primary btn-sm">
+                                    View Event
+                                </a>
+                                <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#cancelModal-@reservation.Id">
+                                    Cancel
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Cancel Reservation Modal -->
+                        <div class="modal fade" id="cancelModal-@reservation.Id" tabindex="-1" aria-labelledby="cancelModalLabel-@reservation.Id" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="cancelModalLabel-@reservation.Id">Cancel Reservation</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to cancel your reservation for "<strong>@reservation.Event.Title</strong>"?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <form asp-action="CancelReservation" asp-route-id="@reservation.Id" method="post" class="d-inline">
+                                            <button type="submit" class="btn btn-danger">Cancel Reservation</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
