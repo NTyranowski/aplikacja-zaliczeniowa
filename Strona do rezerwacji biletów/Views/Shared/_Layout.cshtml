@@ -7,43 +7,61 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/custom.css" />
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
         body {
+            display: flex;
+            flex-direction: column;
             font-family: 'Segoe UI', sans-serif;
             background-color: #f7f9fc;
-            height: 100%;
-            min-height: 100%;
         }
+
+        main {
+            flex: 1;
+        }
+
         .navbar {
             background-color: #004085;
         }
+
         .navbar-brand, .nav-link {
             color: #ffffff !important;
         }
-        .nav-link:hover {
-            color: #ffd700 !important;
-        }
+
+            .nav-link:hover {
+                color: #ffd700 !important;
+            }
+
         .hero-section {
             background: linear-gradient(to right, #004085, #0056b3);
             color: white;
             padding: 50px 0;
             text-align: center;
         }
-        .hero-section h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+
+            .hero-section h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+
         footer {
             background-color: #004085;
             color: white;
             text-align: center;
             padding: 20px 0;
+            margin-top: auto;
         }
-        footer a {
-            color: #ffd700;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
+
+            footer a {
+                color: #ffd700;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
     </style>
 </head>
 <body>
@@ -60,7 +78,7 @@
                             <a class="nav-link" asp-controller="Home" asp-action="Index">Wydarzenia</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Events" asp-action="MyReservations">Moje rezerwacje</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="MyReservations">Moje rezerwacje</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
