@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Strona_do_rezerwacji_biletów.Data;
 using Strona_do_rezerwacji_biletów.Models;
 using System;
+using System.Security.Claims;
 
 namespace Strona_do_rezerwacji_biletów.Controllers
 {
@@ -61,6 +62,33 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult MyReservations()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var reservations = _context.Reservations
+                .Where(r => r.UserId == userId)
+                .Include(r => r.Event)
+                .ToList();
+            if (reservations == null)
+            {
+                return NotFound();
+            }
 
+            return View(reservations);
+        }
+
+        [HttpPost]
+        public IActionResult CancelReservation(int id)
+        {
+            var reservation = _context.Reservations.Find(id);
+
+            if (reservation != null)
+            {
+                _context.Reservations.Remove(reservation);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("MyReservations");
+        }
     }
 }
