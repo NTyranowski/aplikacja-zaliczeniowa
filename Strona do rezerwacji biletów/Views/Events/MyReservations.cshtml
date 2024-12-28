@@ -22,6 +22,7 @@
                         <th>Event</th>
                         <th>Date</th>
                         <th>Category</th>
+                        <th>Is VIP?</th>
                         <th>Seats Reserved</th>
                         <th>Actions</th>
                     </tr>
@@ -33,6 +34,14 @@
                             <td>@reservation.Event.Title</td>
                             <td>@reservation.Event.Date.ToString("yyyy-MM-dd HH:mm")</td>
                             <td>@reservation.Event.Category</td>
+                            @if (reservation.IsVIP ==true){       
+                                <td>TAK</td>
+                            }
+                            else
+                            {
+                                <td>NIE</td>
+                            }
+
                             <td>@reservation.SeatsReserved</td>
                             <td>
                                 <a asp-action="Details" asp-controller="Events" asp-route-id="@reservation.Event.Id" class="btn btn-primary btn-sm">
