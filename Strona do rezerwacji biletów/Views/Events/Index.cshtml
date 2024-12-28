@@ -13,7 +13,8 @@
             <th>Date</th>
             <th>Description</th>
             <th>Category</th>
-            <th>Available Seats</th>
+            <th>Available Normal Seats</th>
+            <th>Available VIP Seats</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -25,7 +26,8 @@
                 <td>@ev.Date.ToString("yyyy-MM-dd HH:mm")</td>
                 <td>@ev.Description</td>
                 <td>@ev.Category</td>
-                <td>@ev.AvailableSeats</td>
+                <td>@ev.AvailableNormalSeats</td>
+                <td>@ev.AvailableVIPSeats</td>
                 <td>
                     <a href="@Url.Action("Details", "Events", new { id = ev.Id })" class="btn btn-primary">Details</a>
                 </td>

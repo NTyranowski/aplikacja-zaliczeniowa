@@ -4,8 +4,12 @@
 <form method="post" action="/Events/Reserve">
     <input type="hidden" name="eventId" value="@Model.Id" />
     <p>Event: @Model.Title</p>
-    <p>Seats Available: @Model.AvailableSeats</p>
+    <p>Normal Seats Available: @Model.AvailableNormalSeats</p>
+    <p>VIP Seats Available: @Model.AvailableVIPSeats</p>
+    <label for="VIPticket">Is VIP?</label>
+    <input type="checkbox" name="VIPticket" />
+    <p></p>
     <label for="seatsReserved">Seats to Reserve:</label>
-    <input type="number" name="seatsReserved" min="1" max="@Model.AvailableSeats" required />
+    <input type="number" name="seatsReserved" min="1" required />
     <button type="submit" class="btn btn-primary">Reserve</button>
 </form>

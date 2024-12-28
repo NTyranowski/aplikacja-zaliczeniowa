@@ -7,6 +7,7 @@
         public DateTime Date { get; set; }
         public string Description { get; set; }
         public string Category { get; set; }
-        public int AvailableSeats { get; set; }
+        public int AvailableNormalSeats { get; set; }
+        public int AvailableVIPSeats { get; set; }
     }
 }

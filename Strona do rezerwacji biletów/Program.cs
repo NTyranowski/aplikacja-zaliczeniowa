@@ -21,6 +21,7 @@ namespace Strona_do_rezerwacji_biletów
             // Konfiguracja tożsamości
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+               //.AddRoles<IdentityRole>();
 
             builder.Services.AddControllersWithViews();
 

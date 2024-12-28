@@ -32,6 +32,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return View(ev);
         }*/
+        [HttpGet]
         public IActionResult Details(int id)
         {
             var ev = _context.Events.FirstOrDefault(e => e.Id == id);
@@ -42,6 +43,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return View(ev);
         }
+
         [HttpGet]
         public IActionResult Reserve(int id)
         {
@@ -57,7 +59,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
         }
 
         [HttpPost]
-        public IActionResult Reserve(int eventId, int seatsReserved)
+        public IActionResult Reserve(int eventId, int seatsReserved, bool isVIP)
         {
             // Znajdź wydarzenie w bazie danych
             var ev = _context.Events.FirstOrDefault(e => e.Id == eventId);
@@ -67,7 +69,9 @@ namespace Strona_do_rezerwacji_biletów.Controllers
             }
 
             // Sprawdź dostępność miejsc
-            if (seatsReserved > ev.AvailableSeats)
+            var seatsAvailable= isVIP ? ev.AvailableVIPSeats : ev.AvailableNormalSeats;
+            
+            if (seatsReserved > seatsAvailable)
             {
                 ModelState.AddModelError("", "Not enough seats available.");
                 return View(ev);
@@ -85,11 +89,16 @@ namespace Strona_do_rezerwacji_biletów.Controllers
             {
                 EventId = eventId,
                 UserId = userId,
-                SeatsReserved = seatsReserved
+                SeatsReserved = seatsReserved,
+                IsVIP = isVIP,
             };
 
             // Zmniejsz liczbę dostępnych miejsc
-            ev.AvailableSeats -= seatsReserved;
+            if (reservation.IsVIP)
+            { ev.AvailableVIPSeats -= seatsReserved; }
+            else { ev.AvailableNormalSeats -= seatsReserved; }
+                
+            
 
             // Zapisz rezerwację i zaktualizuj wydarzenie
             _context.Reservations.Add(reservation);
@@ -146,7 +155,9 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                 if (ev != null)
                 {
                     // Powiększ liczbę dostępnych miejsc
-                    ev.AvailableSeats += reservation.SeatsReserved;
+                    if (reservation.IsVIP)
+                    { ev.AvailableVIPSeats += reservation.SeatsReserved; }
+                    else { ev.AvailableNormalSeats += reservation.SeatsReserved; }
                 }
 
                 // Usuń rezerwację z bazy danych

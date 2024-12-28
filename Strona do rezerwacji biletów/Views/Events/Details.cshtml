@@ -21,21 +21,32 @@
                         <strong>Category:</strong> @Model.Category
                     </p>
                     <p class="card-text">
-                        <strong>Available Seats:</strong>
-                        @if (Model.AvailableSeats > 0)
+                        <strong>Available Normal Seats:</strong>
+                        @if (Model.AvailableNormalSeats > 0)
                         {
-                            <span class="text-success">@Model.AvailableSeats</span>
+                            <span class="text-success">@Model.AvailableNormalSeats</span>
                         }
                         else
                         {
                             <span class="text-danger">No seats available</span>
                         }
                     </p>
+                    <p class="card-text">
+                        <strong>Available VIP Seats:</strong>
+                        @if (Model.AvailableVIPSeats > 0)
+                        {
+                            <span class="text-success">@Model.AvailableVIPSeats</span>
+                        }
+                        else
+                        {
+                            <span class="text-danger">No VIP seats available</span>
+                        }
+                    </p>
                     <div class="d-flex justify-content-between mt-4">
                         <a href="@Url.Action("Index", "Events")" class="btn btn-secondary">
                             Back to Events
                         </a>
-                        @if (Model.AvailableSeats > 0)
+                        @if (Model.AvailableNormalSeats > 0 || Model.AvailableVIPSeats > 0)
                         {
                             <form asp-action="Reserve" asp-route-id="@Model.Id" method="get">
                                 <button type="submit" class="btn btn-primary">Reserve Now</button>

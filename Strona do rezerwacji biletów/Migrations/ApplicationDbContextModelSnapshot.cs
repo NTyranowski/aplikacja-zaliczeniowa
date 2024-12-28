@@ -230,7 +230,10 @@ namespace Strona_do_rezerwacji_biletów.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AvailableSeats")
+                    b.Property<int>("AvailableNormalSeats")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("AvailableVIPSeats")
                         .HasColumnType("integer");
 
                     b.Property<string>("Category")
@@ -264,6 +267,9 @@ namespace Strona_do_rezerwacji_biletów.Migrations
                     b.Property<int>("EventId")
                         .HasColumnType("integer");
 
+                    b.Property<bool>("IsVIP")
+                        .HasColumnType("boolean");
+
                     b.Property<int>("SeatsReserved")
                         .HasColumnType("integer");
 
@@ -272,6 +278,8 @@ namespace Strona_do_rezerwacji_biletów.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EventId");
 
                     b.ToTable("Reservations");
                 });
@@ -325,6 +333,17 @@ namespace Strona_do_rezerwacji_biletów.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Strona_do_rezerwacji_biletów.Models.Reservation", b =>
+                {
+                    b.HasOne("Strona_do_rezerwacji_biletów.Models.Event", "Event")
+                        .WithMany()
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
                 });
 #pragma warning restore 612, 618
         }
