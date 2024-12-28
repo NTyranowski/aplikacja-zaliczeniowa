@@ -59,7 +59,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
         }
 
         [HttpPost]
-        public IActionResult Reserve(int eventId, int seatsReserved, bool isVIP)
+        public IActionResult Reserve(int eventId, int seatsReserved, bool VIPticket)
         {
             // Znajdź wydarzenie w bazie danych
             var ev = _context.Events.FirstOrDefault(e => e.Id == eventId);
@@ -69,7 +69,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
             }
 
             // Sprawdź dostępność miejsc
-            var seatsAvailable= isVIP ? ev.AvailableVIPSeats : ev.AvailableNormalSeats;
+            var seatsAvailable= VIPticket ? ev.AvailableVIPSeats : ev.AvailableNormalSeats;
             
             if (seatsReserved > seatsAvailable)
             {
@@ -90,13 +90,14 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                 EventId = eventId,
                 UserId = userId,
                 SeatsReserved = seatsReserved,
-                IsVIP = isVIP,
+                IsVIP = VIPticket,
             };
 
             // Zmniejsz liczbę dostępnych miejsc
             if (reservation.IsVIP)
             { ev.AvailableVIPSeats -= seatsReserved; }
             else { ev.AvailableNormalSeats -= seatsReserved; }
+
                 
             
 
@@ -107,6 +108,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
             // Przekieruj użytkownika do strony potwierdzenia lub listy wydarzeń
             return RedirectToAction("Index");
         }
+
         /*[HttpPost]
         public IActionResult Reserve(int eventId, int seatsReserved)
         {

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Strona do rezerwacji biletów")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+543718f721587a5a33ced4832dd5b08f1c0c6876")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05dcba4cd89db52458b9bb7533a016bc5727ec9b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Strona do rezerwacji biletów")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Strona do rezerwacji biletów")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
