@@ -1,7 +1,7 @@
 ﻿@model Strona_do_rezerwacji_biletów.Models.Event
 
 @{
-    ViewData["Title"] = "Event Details";
+    ViewData["Title"] = "Szczegóły wydarzenia";
 }
 
 <div class="container mt-4">
@@ -12,44 +12,44 @@
                     <h1 class="card-title text-center">@Model.Title</h1>
                     <hr>
                     <p class="card-text">
-                        <strong>Date:</strong> @Model.Date.ToString("yyyy-MM-dd HH:mm")
+                        <strong>Data:</strong> @Model.Date.ToString("yyyy-MM-dd HH:mm")
                     </p>
                     <p class="card-text">
-                        <strong>Description:</strong> @Model.Description
+                        <strong>Szczegóły:</strong> @Model.Description
                     </p>
                     <p class="card-text">
-                        <strong>Category:</strong> @Model.Category
+                        <strong>Kategoria:</strong> @Model.Category
                     </p>
                     <p class="card-text">
-                        <strong>Available Normal Seats:</strong>
+                        <strong>Dostępne bilety normalne:</strong>
                         @if (Model.AvailableNormalSeats > 0)
                         {
                             <span class="text-success">@Model.AvailableNormalSeats</span>
                         }
                         else
                         {
-                            <span class="text-danger">No seats available</span>
+                            <span class="text-danger">SOLD OUT!</span>
                         }
                     </p>
                     <p class="card-text">
-                        <strong>Available VIP Seats:</strong>
+                        <strong>Dostępne bilety VIP:</strong>
                         @if (Model.AvailableVIPSeats > 0)
                         {
                             <span class="text-success">@Model.AvailableVIPSeats</span>
                         }
                         else
                         {
-                            <span class="text-danger">No VIP seats available</span>
+                            <span class="text-danger">SOLD OUT!</span>
                         }
                     </p>
                     <div class="d-flex justify-content-between mt-4">
                         <a href="@Url.Action("Index", "Events")" class="btn btn-secondary">
-                            Back to Events
+                            Powrót do wydarzeń
                         </a>
                         @if (Model.AvailableNormalSeats > 0 || Model.AvailableVIPSeats > 0)
                         {
                             <form asp-action="Reserve" asp-route-id="@Model.Id" method="get">
-                                <button type="submit" class="btn btn-primary">Reserve Now</button>
+                                <button type="submit" class="btn btn-primary">Zarezerwuj!</button>
                             </form>
                         }
                     </div>

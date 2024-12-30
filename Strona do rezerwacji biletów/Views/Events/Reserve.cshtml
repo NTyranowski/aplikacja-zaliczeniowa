@@ -1,17 +1,17 @@
 ﻿@model Strona_do_rezerwacji_biletów.Models.Event
 
-<h1>Reserve Tickets</h1>
+<h1>Rezerwacja biletów</h1>
 
 <form method="post" action="/Events/Reserve">
     <input type="hidden" name="eventId" value="@Model.Id" />
-    <p>Event: @Model.Title</p>
-    <p>Normal Seats Available: @Model.AvailableNormalSeats</p>
-    <p>VIP Seats Available: @Model.AvailableVIPSeats</p>
-    <label for="VIPticket">Is VIP?</label>
+    <p>Wydarzenie: @Model.Title</p>
+    <p>Dostępne bilety normalne: @Model.AvailableNormalSeats</p>
+    <p>Dostępne bilety VIP: @Model.AvailableVIPSeats</p>
+    <label for="VIPticket">Czy chcesz zarezerować miejsce VIP?</label>
     
     <input name="VIPticket" type="checkbox" value="false" onchange="this.value=this.checked">
     <p></p>
-    <label for="seatsReserved">Seats to Reserve:</label>
+    <label for="seatsReserved">Zarezerwowane miejsca:</label>
     <input type="number" name="seatsReserved" min="1" required />
-    <button type="submit" class="btn btn-primary">Reserve</button>
+    <button type="submit" class="btn btn-primary">Rezerwuj</button>
 </form>
