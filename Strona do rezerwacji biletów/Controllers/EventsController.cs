@@ -19,7 +19,25 @@ namespace Strona_do_rezerwacji_biletów.Controllers
         }
 
         [AllowAnonymous]
-        public IActionResult Index()
+        
+        public IActionResult Index(string category)
+        {
+            var categories = _context.Events
+                .Select(e => e.Category)
+                .Distinct()
+                .ToList();
+
+            var events = string.IsNullOrEmpty(category) ?
+                _context.Events.ToList() :
+                _context.Events.Where(e => e.Category == category).ToList();
+
+            ViewBag.Categories = categories;
+            ViewBag.SelectedCategory = category;
+
+            return View(events);
+        }
+
+        /*public IActionResult Index()
         {
             var events = _context.Events.ToList();
             return View(events);

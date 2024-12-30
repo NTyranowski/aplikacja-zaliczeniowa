@@ -6,6 +6,32 @@
 
 <h1>Dostępne wydarzenia</h1>
 
+<!-- Formularz filtrowania -->
+<form method="get" asp-action="Index" asp-controller="Events" class="mb-3">
+    <div class="input-group">
+        <select name="category" class="form-select">
+            <option value="">Wszystkie kategorie</option>
+            @foreach (var category in ViewBag.Categories as List<string>)
+            {
+                if (ViewBag.SelectedCategory == category)
+                {
+                    <option value="@category" selected>
+                        @category
+                    </option>
+                }
+                else
+                {
+                    <option value="@category">
+                        @category
+                    </option>
+                }
+            }
+        </select>
+        <button type="submit" class="btn btn-primary">Filtruj</button>
+    </div>
+</form>
+
+<!-- Tabela wydarzeń -->
 <table class="table table-striped table-hover">
     <thead class="table-dark">
         <tr>
@@ -23,7 +49,7 @@
         {
             <tr>
                 <td>@ev.Title</td>
-                <td>@ev.Date.ToString("yyyy-MM-dd HH:mm")</td>           
+                <td>@ev.Date.ToString("yyyy-MM-dd HH:mm")</td>
                 <td>@(ev.Description.Length > 10 ? ev.Description.Substring(0, 10) + "..." : ev.Description)</td>
                 <td>@ev.Category</td>
                 <td>@ev.AvailableNormalSeats</td>
@@ -33,10 +59,10 @@
                 </td>
             </tr>
         }
-        @if(!Model.Any())
+        @if (!Model.Any())
         {
             <tr>
-                <td colspan="6" class="text-center">No events available.</td>
+                <td colspan="7" class="text-center">Brak dostępnych wydarzeń.</td>
             </tr>
         }
     </tbody>
