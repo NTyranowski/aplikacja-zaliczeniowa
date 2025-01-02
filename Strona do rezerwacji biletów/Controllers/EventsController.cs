@@ -197,16 +197,49 @@ namespace Strona_do_rezerwacji_biletów.Controllers
         }
         [Authorize(Roles ="Admin") ]
         [HttpPost]
-        public IActionResult Add(Event model)
+        public IActionResult Add(EventCreate model)
         {
-            if(ModelState.IsValid) 
+            if(ModelState.IsValid)
             {
-                _context.Events.Add(model);
+                // Ustaw ścieżkę folderu, w którym zapiszesz plik
+                string uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "events");
+
+                // Upewnij się, że folder istnieje
+                if (!Directory.Exists(uploadFolder))
+                {
+                    Directory.CreateDirectory(uploadFolder);
+                }
+
+                // Generuj unikalną nazwę pliku
+                string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.Image.FileName);
+
+                // Pełna ścieżka do zapisu
+                string filePath = Path.Combine(uploadFolder, uniqueFileName);
+
+                // Zapis pliku
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.Image.CopyTo(stream);
+                }
+
+                // Tworzenie zmiennej ścieżki
+                string imagePath = $"/images/events/{uniqueFileName}";
+                Event ev = new Event
+                {
+                    Id = model.Id,
+                    Title = model.Title,
+                    Description = model.Description,
+                    Date = model.Date,
+                    Category = model.Category,
+                    AvailableNormalSeats = model.AvailableNormalSeats,
+                    AvailableVIPSeats = model.AvailableVIPSeats,
+                    ImagePath = imagePath
+                };
+                _context.Events.Add(ev);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
-
             }
-            
+
             return View(model);
         }
 

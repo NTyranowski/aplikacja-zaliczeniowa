@@ -12,7 +12,7 @@ using Strona_do_rezerwacji_biletów.Data;
 namespace Strona_do_rezerwacji_biletów.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250102180152_InitialCreate")]
+    [Migration("20250102203727_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
