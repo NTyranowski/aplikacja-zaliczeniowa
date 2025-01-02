@@ -47,3 +47,14 @@ button.accept-policy[b-88rsueg5wp] {
   white-space: nowrap;
   line-height: 60px;
 }
+
+h2[b-88rsueg5wp] {
+    cursor: pointer; /* Zmienia kursor na "rękę" po najechaniu */
+    transition: color 0.3s, background-color 0.3s; /* Płynna zmiana koloru i tła */
+}
+
+    h2:hover[b-88rsueg5wp] {
+        color: #007BFF; /* Zmienia kolor tekstu na niebieski */
+        background-color: #f1f1f1; /* Zmienia tło na jasnoszare */
+    }
+

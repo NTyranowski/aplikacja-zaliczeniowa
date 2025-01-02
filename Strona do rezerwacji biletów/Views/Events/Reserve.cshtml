@@ -7,10 +7,13 @@
     <p>Wydarzenie: @Model.Title</p>
     <p>Dostępne bilety normalne: @Model.AvailableNormalSeats</p>
     <p>Dostępne bilety VIP: @Model.AvailableVIPSeats</p>
-    <label for="VIPticket">Czy chcesz zarezerować miejsce VIP?</label>
-    
-    <input name="VIPticket" type="checkbox" value="false" onchange="this.value=this.checked">
-    <p></p>
+    @if(Model.AvailableVIPSeats>0)
+    {
+        <label for="VIPticket">Czy chcesz zarezerować miejsce VIP?</label>
+
+        <input name="VIPticket" type="checkbox" value="false" onchange="this.value=this.checked">
+        <p></p>
+    }
     <label for="seatsReserved">Zarezerwowane miejsca:</label>
     <input type="number" name="seatsReserved" min="1" required />
     <button type="submit" class="btn btn-primary">Rezerwuj</button>

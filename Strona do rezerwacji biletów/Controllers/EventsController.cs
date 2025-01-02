@@ -190,6 +190,25 @@ namespace Strona_do_rezerwacji_biletów.Controllers
             // Przekieruj użytkownika do strony z jego rezerwacjami
             return RedirectToAction("MyReservations");
         }
+        [Authorize(Roles = "Admin")]
+        public IActionResult Add()
+        {
+            return View();
+        }
+        [Authorize(Roles ="Admin") ]
+        [HttpPost]
+        public IActionResult Add(Event model)
+        {
+            if(ModelState.IsValid) 
+            {
+                _context.Events.Add(model);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+            
+            return View(model);
+        }
 
     }
 }

@@ -10,6 +10,18 @@ namespace Strona_do_rezerwacji_biletów
 {
     public class Program
     {
+        public static async void CreateRoles(IServiceProvider serviceProvider)
+        {
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+
+            var roles = new[] { "Admin", "User", };
+
+            foreach (var role in roles)
+            {
+
+            }
+        }
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -20,12 +32,19 @@ namespace Strona_do_rezerwacji_biletów
 
             // Konfiguracja tożsamości
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-               //.AddRoles<IdentityRole>();
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultUI();
+                
 
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                 CreateRoles(services);
+            }
 
             if (!app.Environment.IsDevelopment())
             {
@@ -46,6 +65,7 @@ namespace Strona_do_rezerwacji_biletów
             app.MapRazorPages();
 
             app.Run();
+
         }
     }
 }

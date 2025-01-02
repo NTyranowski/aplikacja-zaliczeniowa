@@ -15,9 +15,19 @@
         body {
             display: flex;
             flex-direction: column;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Cambria', serif;
             background-color: #f7f9fc;
         }
+
+        h2 {
+            cursor: pointer; /* Zmienia kursor na "rękę" po najechaniu */
+            transition: color 0.3s, background-color 0.3s; /* Płynna zmiana koloru i tła */
+        }
+
+            h2:hover {
+                color: #007BFF; /* Zmienia kolor tekstu na niebieski */
+                background-color: #f1f1f1; /* Zmienia tło na jasnoszare */
+            }
 
         main {
             flex: 1;

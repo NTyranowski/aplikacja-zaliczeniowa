@@ -1,0 +1,27 @@
+﻿@model Strona_do_rezerwacji_biletów.Models.Event
+
+@{
+    ViewData["Title"] = "Dodawanie wydarzenia";
+}
+
+<h1>Dodawanie wydarzenia</h1>
+
+<form method="post" action="/Events/Add">
+    <p><label for="Title">Nazwa wydarzenia: </label></p>
+	<input name="Title" type="text" required/>
+    <p><label for="Description">Opis wydarzenia: </label></p>
+    <textarea name="Description"></textarea>
+    <p><label for="Date">Data wydarzenia: </label></p>
+    <input name="Date" type="date" required />
+    <p><label for="Category">Kategoria: </label></p>
+    <select name="Category" id="Category">
+        <option value="Sport">Sport</option>
+        <option value="Muzyka">Muzyka</option>
+        <option value="Inne">Inne</option>
+    </select>
+    <p><label for="AvailableNormalSeats">Dostępne bilety normalne: </label></p>
+    <input name="AvailableNormalSeats" type="number" min="1" required />
+    <p><label for="AvailableVIPSeats">Dostępne bilety VIP: </label></p>
+    <input name="AvailableVIPSeats" type="number" default="0"/>
+    <button type="submit" class="btn btn-primary">Utworz</button>
+</form>

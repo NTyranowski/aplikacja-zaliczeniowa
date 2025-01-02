@@ -8,8 +8,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow-sm">
-                <div class="card-body">
-                    <h1 class="card-title text-center">@Model.Title</h1>
+                <div class="card-body text-center">
+                    @if (!string.IsNullOrEmpty(Model.ImagePath))
+                    {
+                        <img src="@Url.Content($"~/{Model.ImagePath ?? "images/events/default.jpg"}")"
+                             alt="Plakat wydarzenia"
+                             class="img-fluid mb-4"
+                             style="max-height: 300px; object-fit: cover;" />
+
+                    }
+                    else
+                    {
+                        <p class="text-muted">Brak plakatu dla tego wydarzenia.</p>
+                    }
+                    <h1 class="card-title">@Model.Title</h1>
                     <hr>
                     <p class="card-text">
                         <strong>Data:</strong> @Model.Date.ToString("yyyy-MM-dd HH:mm")

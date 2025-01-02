@@ -9,5 +9,8 @@
         public string Category { get; set; }
         public int AvailableNormalSeats { get; set; }
         public int AvailableVIPSeats { get; set; }
+
+        // Ścieżka do plakatu wydarzenia
+        public string ImagePath { get; set; }
     }
 }

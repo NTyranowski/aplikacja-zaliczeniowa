@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QruIegLprxaELKt8ejj8QqwkMpfhZnDb2PRfL1i17i4C9nQ7U4Mi9O/1qCV68PzNTT7HllXTVuvaJLB0pSfr0Q==",
+  "dgSpecHash": "34BX7IuZmczzzBWuuOQaMamCRkyivKITWGHOvOoNtVvG/32STvA3rw79Hf+rxs55iMmtT2IEUAncol5WoNE6mw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bartek\\Documents\\GitHub\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
+  "projectFilePath": "C:\\Users\\Bartek\\OneDrive - Office 365\\Pulpit\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bartek\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Bartek\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -8408,11 +8408,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bartek\\Documents\\GitHub\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
+      "projectUniqueName": "C:\\Users\\Bartek\\OneDrive - Office 365\\Pulpit\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
       "projectName": "Strona do rezerwacji biletów",
-      "projectPath": "C:\\Users\\Bartek\\Documents\\GitHub\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
+      "projectPath": "C:\\Users\\Bartek\\OneDrive - Office 365\\Pulpit\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
       "packagesPath": "C:\\Users\\Bartek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bartek\\Documents\\GitHub\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\obj\\",
+      "outputPath": "C:\\Users\\Bartek\\OneDrive - Office 365\\Pulpit\\Strona do rezerwacji biletów\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bartek\\AppData\\Roaming\\NuGet\\NuGet.Config",

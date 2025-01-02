@@ -1,6 +1,100 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Polityka Prywatności";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<p>Twoje dane osobowe są dla nas bardzo ważne. W tej polityce prywatności opisujemy, w jaki sposób zbieramy, przetwarzamy i chronimy Twoje dane. Korzystając z naszej strony internetowej, zgadzasz się na zasady przedstawione w tej polityce.</p>
+
+<div>
+    <h2 onclick="toggleVisibility('section1')">1. Administrator danych osobowych</h2>
+    <div id="section1" style="display:none;">
+        <p>Administratorem Twoich danych osobowych jest firma SuperBilet, specjalizująca się w rezerwacji biletów na wydarzenia, z siedzibą w [adres], NIP: [NIP]. Możesz skontaktować się z nami pod adresem e-mail: [adres e-mail] lub telefonicznie: [numer telefonu].</p>
+    </div>
+</div>
+
+<div>
+    <h2 onclick="toggleVisibility('section2')">2. Jakie dane zbieramy?</h2>
+    <div id="section2" style="display:none;">
+        <p>Zbieramy dane, które są niezbędne do świadczenia usług oferowanych przez naszą stronę, w tym:</p>
+        <ul>
+            <li>Dane kontaktowe (imię, nazwisko, adres e-mail, numer telefonu),</li>
+            <li>Dane dotyczące aktywności na stronie (adres IP, przeglądarka internetowa, czas spędzony na stronie),</li>
+            <li>Informacje o transakcjach, jeśli dokonujesz zakupu biletów przez naszą stronę.</li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <h2 onclick="toggleVisibility('section3')">3. Jak wykorzystujemy Twoje dane?</h2>
+    <div id="section3" style="display:none;">
+        <p>Twoje dane osobowe mogą być wykorzystywane w następujących celach:</p>
+        <ul>
+            <li>Świadczenie usług rezerwacji biletów na wydarzenia,</li>
+            <li>Kontakt z użytkownikami w sprawach związanych z obsługą klienta,</li>
+            <li>Marketing bezpośredni, w tym przesyłanie ofert i promocji związanych z wydarzeniami,</li>
+            <li>Analiza korzystania ze strony w celu jej ulepszania.</li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <h2 onclick="toggleVisibility('section4')">4. Jak chronimy Twoje dane?</h2>
+    <div id="section4" style="display:none;">
+        <p>Stosujemy odpowiednie środki techniczne i organizacyjne, aby zapewnić bezpieczeństwo Twoich danych osobowych. Przechowujemy dane w sposób zabezpieczony przed dostępem osób nieuprawnionych.</p>
+    </div>
+</div>
+
+<div>
+    <h2 onclick="toggleVisibility('section5')">5. Udostępnianie danych</h2>
+    <div id="section5" style="display:none;">
+        <p>Twoje dane osobowe mogą być udostępniane tylko w przypadkach określonych przepisami prawa, lub w celu realizacji usług (np. podmiotom wspierającym naszą działalność, takim jak firmy zajmujące się obsługą płatności).</p>
+    </div>
+</div>
+
+<div>
+    <h2 onclick="toggleVisibility('section6')">6. Twoje prawa</h2>
+    <div id="section6" style="display:none;">
+        <p>Masz prawo do:</p>
+        <ul>
+            <li>Uzyskania dostępu do swoich danych osobowych,</li>
+            <li>Sprostowania swoich danych,</li>
+            <li>Usunięcia danych ("prawo do bycia zapomnianym"),</li>
+            <li>Ograniczenia przetwarzania danych,</li>
+            <li>Przenoszenia danych,</li>
+            <li>Sprzeciwu wobec przetwarzania danych w celach marketingowych.</li>
+        </ul>
+        <p>Aby skorzystać ze swoich praw, skontaktuj się z nami pod adresem e-mail: [adres e-mail].</p>
+    </div>
+</div>
+
+<div>
+    <h2 onclick="toggleVisibility('section7')">7. Pliki cookies</h2>
+    <div id="section7" style="display:none;">
+        <p>Nasza strona używa plików cookies w celu zapewnienia pełnej funkcjonalności. Możesz zarządzać ustawieniami plików cookies w swojej przeglądarce internetowej.</p>
+    </div>
+</div>
+
+<div>
+    <h2 onclick="toggleVisibility('section8')">8. Zmiany w Polityce Prywatności</h2>
+    <div id="section8" style="display:none;">
+        <p>Zastrzegamy sobie prawo do zmiany niniejszej polityki prywatności. Wszelkie zmiany będą publikowane na tej stronie. Zmieniona polityka prywatności wejdzie w życie w dniu jej opublikowania.</p>
+    </div>
+</div>
+
+<div>
+    <h2 onclick="toggleVisibility('section9')">9. Kontakt</h2>
+    <div id="section9" style="display:none;">
+        <p>Jeśli masz jakiekolwiek pytania dotyczące naszej polityki prywatności, skontaktuj się z nami pod adresem e-mail: [adres e-mail] lub telefonicznie: [numer telefonu].</p>
+    </div>
+</div>
+
+<script>
+    function toggleVisibility(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section.style.display === "none") {
+            section.style.display = "block";
+        } else {
+            section.style.display = "none";
+        }
+    }
+</script>

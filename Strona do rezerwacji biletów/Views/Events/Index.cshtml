@@ -4,7 +4,11 @@
     ViewData["Title"] = "Wydarzenia";
 }
 
-<h1>Dostępne wydarzenia</h1>
+<h1>Dostępne wydarzenia  </h1>
+@if(User.IsInRole("Admin") )
+{
+    <a href="@Url.Action("Add", "Events")" class="mb-2 btn btn-primary">Dodaj wydarzenie</a>
+}
 
 <!-- Formularz filtrowania -->
 <form method="get" asp-action="Index" asp-controller="Events" class="mb-3">
