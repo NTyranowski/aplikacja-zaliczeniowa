@@ -15,18 +15,19 @@
         body {
             display: flex;
             flex-direction: column;
-            font-family: 'Cambria', serif;
-            background-color: #f7f9fc;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff; /* Białe tło dla minimalistycznego wyglądu */
+            color: #333333; /* Neutralny ciemnoszary kolor tekstu */
         }
 
         h2 {
-            cursor: pointer; /* Zmienia kursor na "rękę" po najechaniu */
-            transition: color 0.3s, background-color 0.3s; /* Płynna zmiana koloru i tła */
+            cursor: pointer;
+            transition: color 0.3s, background-color 0.3s;
         }
 
             h2:hover {
-                color: #007BFF; /* Zmienia kolor tekstu na niebieski */
-                background-color: #f1f1f1; /* Zmienia tło na jasnoszare */
+                color: #555555; /* Delikatnie ciemniejszy szary podczas najechania */
+                background-color: #f9f9f9; /* Subtelne szare tło */
             }
 
         main {
@@ -34,44 +35,58 @@
         }
 
         .navbar {
-            background-color: #004085;
+            background-color: #333333; /* Neutralny ciemnoszary kolor dla nagłówka */
         }
 
-        .navbar-brand, .nav-link {
-            color: #ffffff !important;
+        .navbar-brand, .nav-link, .navbar-nav .nav-item a{
+            color: #ffffff !important; /* Jasny kolor tekstu dla kontrastu */
         }
 
-            .nav-link:hover {
-                color: #ffd700 !important;
+            .nav-link:hover, .navbar-nav .nav-item a:hover{
+                color: #c7c7c7 !important; /* Akcentowy kolor na hover */
             }
 
+            .navbar-nav .nav-item a{
+
+            }
         .hero-section {
-            background: linear-gradient(to right, #004085, #0056b3);
-            color: white;
-            padding: 50px 0;
+            background: #f4f4f4; /* Jasnoszare tło */
+            color: #333333; /* Ciemnoszary tekst */
+            padding: 40px 0;
             text-align: center;
         }
 
             .hero-section h1 {
-                font-size: 3rem;
-                margin-bottom: 20px;
+                font-size: 2.5rem;
+                margin-bottom: 15px;
             }
 
         footer {
-            background-color: #004085;
-            color: white;
+            background-color: #333333; /* Dopasowanie kolorystyki do nagłówka */
+            color: #ffffff; /* Jasny tekst */
             text-align: center;
-            padding: 20px 0;
+            padding: 15px 0;
             margin-top: auto;
         }
 
-            footer a {
-                color: #ffd700;
-            }
+        footer a{
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: underline;
+        }
 
-                footer a:hover {
-                    text-decoration: underline;
-                }
+        footer a:hover {
+            color: #c7c7c7;
+            text-decoration: underline;
+        }
+
+        a {
+            color: #6e6e6e;
+        }
+
+        a:hover {
+            color: black;
+        }
     </style>
 </head>
 <body>

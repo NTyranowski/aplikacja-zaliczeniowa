@@ -2,18 +2,22 @@
 
 @{
     ViewData["Title"] = "Wydarzenia";
+    var sortedModel = Model.OrderBy(ev => ev.Date);
 }
 
 <h1>Dostępne wydarzenia  </h1>
 @if(User.IsInRole("Admin") )
 {
-    <a href="@Url.Action("Add", "Events")" class="mb-2 btn btn-primary">Dodaj wydarzenie</a>
+    <div class="btn-group">
+        <a href="@Url.Action("Add", "Events")" class="btn btn-dark mb-2">Dodaj wydarzenie</a>
+    </div>
 }
 
 <!-- Formularz filtrowania -->
-<form method="get" asp-action="Index" asp-controller="Events" class="mb-3">
-    <div class="input-group">
-        <select name="category" class="form-select">
+<form method="get" asp-action="Index" asp-controller="Events" class="mb-2">
+    <div class="input-group mb-2">
+        <input type="text" name="searchQuery" value="@ViewBag.SearchQuery" class="form-control" placeholder="Wyszukaj wydarzenia">
+        <select name="category" class="form-select ms-1">
             <option value="">Wszystkie kategorie</option>
             @foreach (var category in ViewBag.Categories as List<string>)
             {
@@ -31,7 +35,10 @@
                 }
             }
         </select>
-        <button type="submit" class="btn btn-primary">Filtruj</button>
+        <div class="btn-group ms-1" role="group" aria-label="Button group">
+            <button type="submit" class="btn btn-dark">Filtruj</button>
+            <a href="@Url.Action("Index", "Events")" class="btn btn-secondary">Wyczyść filtry</a>
+        </div>
     </div>
 </form>
 
@@ -49,7 +56,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var ev in Model)
+        @foreach (var ev in sortedModel)
         {
             <tr>
                 <td>@ev.Title</td>
@@ -59,7 +66,7 @@
                 <td>@ev.AvailableNormalSeats</td>
                 <td>@ev.AvailableVIPSeats</td>
                 <td>
-                    <a href="@Url.Action("Details", "Events", new { id = ev.Id })" class="btn btn-primary">Szczegóły wydarzenia</a>
+                    <a href="@Url.Action("Details", "Events", new { id = ev.Id })" class="btn btn-dark">Szczegóły wydarzenia</a>
                 </td>
             </tr>
         }

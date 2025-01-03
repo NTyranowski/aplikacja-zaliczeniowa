@@ -19,22 +19,36 @@ namespace Strona_do_rezerwacji_biletów.Controllers
         }
 
         [AllowAnonymous]
-        
-        public IActionResult Index(string category)
+        public IActionResult Index(string category, string searchQuery)
         {
             var categories = _context.Events
                 .Select(e => e.Category)
                 .Distinct()
                 .ToList();
 
-            var events = string.IsNullOrEmpty(category) ?
-                _context.Events.ToList() :
-                _context.Events.Where(e => e.Category == category).ToList();
+            var events = _context.Events.AsQueryable();
 
+            // Filtrowanie po kategorii
+            if (!string.IsNullOrEmpty(category))
+            {
+                events = events.Where(e => e.Category == category);
+            }
+
+            // Wyszukiwanie po tytule i opisie
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                events = events.Where(e => e.Title.Contains(searchQuery) || e.Description.Contains(searchQuery));
+            }
+
+            // Pobranie wyników i sortowanie po dacie
+            var sortedEvents = events.OrderBy(e => e.Date).ToList();
+
+            // Przekazanie danych do widoku
             ViewBag.Categories = categories;
             ViewBag.SelectedCategory = category;
+            ViewBag.SearchQuery = searchQuery;
 
-            return View(events);
+            return View(sortedEvents);
         }
 
         /*public IActionResult Index()
@@ -199,7 +213,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
         [HttpPost]
         public IActionResult Add(EventCreate model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 // Ustaw ścieżkę folderu, w którym zapiszesz plik
                 string uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "events");
@@ -239,7 +253,23 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            else if (model.Image == null)
+            {
+                Event ev = new Event
+                {
+                    Id = model.Id,
+                    Title = model.Title,
+                    Description = model.Description,
+                    Date = model.Date,
+                    Category = model.Category,
+                    AvailableNormalSeats = model.AvailableNormalSeats,
+                    AvailableVIPSeats = model.AvailableVIPSeats,
+                    ImagePath = ""
+                };
+                _context.Events.Add(ev);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View(model);
         }
 

@@ -8,7 +8,7 @@ a.navbar-brand {
 }
 
 a {
-  color: #0077cc;
+    color: #ffffff;
 }
 
 .btn-primary {
@@ -46,14 +46,3 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
-
-h2 {
-    cursor: pointer; /* Zmienia kursor na "rękę" po najechaniu */
-    transition: color 0.3s, background-color 0.3s; /* Płynna zmiana koloru i tła */
-}
-
-    h2:hover {
-        color: #007BFF; /* Zmienia kolor tekstu na niebieski */
-        background-color: #f1f1f1; /* Zmienia tło na jasnoszare */
-    }
-

@@ -10,14 +10,14 @@
     <p><label for="Title">Nazwa wydarzenia: </label></p>
 	<input name="Title" type="text" required/>
     <p><label for="Description">Opis wydarzenia: </label></p>
-    <textarea name="Description"></textarea>
+    <textarea name="Description" required></textarea>
     <p><label for="Date">Data wydarzenia: </label></p>
     <input name="Date" type="date" required />
     <p><label for="Category">Kategoria: </label></p>
     <select name="Category" id="Category">
         <option value="Sport">Sport</option>
         <option value="Muzyka">Muzyka</option>
-        <option value="Inne">Inne</option>
+        <option value="Inne" selected>Inne</option>
     </select>
     <input name="Image" type="file"/>
     <p><label for="AvailableNormalSeats">Dostępne bilety normalne: </label></p>
