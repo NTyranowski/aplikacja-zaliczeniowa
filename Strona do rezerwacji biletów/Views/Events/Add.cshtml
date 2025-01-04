@@ -6,23 +6,24 @@
 
 <h1>Dodawanie wydarzenia</h1>
 
-<form method="post" action="/Events/Add" enctype="multipart/form-data">
-    <p><label for="Title">Nazwa wydarzenia: </label></p>
-	<input name="Title" type="text" required/>
-    <p><label for="Description">Opis wydarzenia: </label></p>
-    <textarea name="Description" required></textarea>
-    <p><label for="Date">Data wydarzenia: </label></p>
-    <input name="Date" type="date" required />
-    <p><label for="Category">Kategoria: </label></p>
-    <select name="Category" id="Category">
+<form class="col-3" method="post" action="/Events/Add" enctype="multipart/form-data">
+    <label for="Title">Nazwa wydarzenia: </label>
+    <input class="form-control mb-2" id="Title" name="Title" type="text" required />
+    <label for="Description">Opis wydarzenia: </label>
+    <textarea class="form-control mb-2" name="Description" required></textarea>
+    <label for="Date">Data wydarzenia: </label>
+    <input class="form-control mb-2" name="Date" type="date" required />
+    <label for="Category">Kategoria: </label>
+    <select class="form-control" name="Category" id="Category">
         <option value="Sport">Sport</option>
         <option value="Muzyka">Muzyka</option>
         <option value="Inne" selected>Inne</option>
     </select>
-    <input name="Image" type="file"/>
-    <p><label for="AvailableNormalSeats">Dostępne bilety normalne: </label></p>
-    <input name="AvailableNormalSeats" type="number" min="1" required />
-    <p><label for="AvailableVIPSeats">Dostępne bilety VIP: </label></p>
-    <input name="AvailableVIPSeats" type="number" default="0"/>
-    <button type="submit" class="btn btn-primary">Utworz</button>
+    <label for="Image" class="form-label"></label>
+    <input class="form-control mb-2" name="Image" type="file" />
+    <label for="AvailableNormalSeats">Dostępne bilety normalne: </label>
+    <input class="form-control mb-2" name="AvailableNormalSeats" type="number" min="1" required />
+    <label for="AvailableVIPSeats">Dostępne bilety VIP: </label>
+    <input class="form-control mb-2" name="AvailableVIPSeats" type="number" default="0" />
+    <button type="submit" class="btn btn-dark">Utworz</button>
 </form>

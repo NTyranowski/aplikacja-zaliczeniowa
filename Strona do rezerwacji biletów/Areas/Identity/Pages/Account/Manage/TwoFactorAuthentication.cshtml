@@ -1,0 +1,78 @@
+﻿@page
+@using Microsoft.AspNetCore.Http.Features
+@model TwoFactorAuthenticationModel
+@{
+    ViewData["Title"] = "Uwierzytelnianie dwuskładnikowe (2FA)";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h3>@ViewData["Title"]</h3>
+@{
+    var consentFeature = HttpContext.Features.Get<ITrackingConsentFeature>();
+    @if (consentFeature?.CanTrack ?? true)
+    {
+        @if (Model.Is2faEnabled)
+        {
+            if (Model.RecoveryCodesLeft == 0)
+            {
+                <div class="alert alert-danger">
+                    <strong>You have no recovery codes left.</strong>
+                    <p>Musisz <a asp-page="./GenerateRecoveryCodes">wygenerować nowy zestaw kodów odzyskiwania</a> zanim będziesz mógł się zalogować przy użyciu kodu odzyskiwania.</p>
+                </div>
+            }
+            else if (Model.RecoveryCodesLeft == 1)
+            {
+                <div class="alert alert-danger">
+                    <strong>Pozostał Ci 1 kod odzyskiwania.</strong>
+                    <p>Powinieneś <a asp-page="./GenerateRecoveryCodes">wygenerować nowy zestaw kodów odzyskiwania</a>.</p>
+                </div>
+            }
+            else if (Model.RecoveryCodesLeft <= 4)
+            {
+                <div class="alert alert-warning">
+                    <strong>Pozostały ci @Model.RecoveryCodesLeft kody odzyskiwania.</strong>
+                    <p>Powinieneś <a asp-page="./GenerateRecoveryCodes">wygenerować nowy zestaw kodów odzyskiwania</a>.</p>
+                </div>
+            }
+            else if (Model.RecoveryCodesLeft >= 5)
+            {
+                <div class="alert alert-warning">
+                    <strong>Pozostało ci @Model.RecoveryCodesLeft kodów odzyskiwania.</strong>
+                    <p>Możesz <a asp-page="./GenerateRecoveryCodes">wygenerować nowy zestaw kodów odzyskiwania</a>.</p>
+                </div>
+            }
+
+            if (Model.IsMachineRemembered)
+            {
+                <form method="post" style="display: inline-block">
+                    <button type="submit" class="btn btn-dark">zapomnij w tej przeglądarce</button>
+                </form>
+            }
+            <a asp-page="./Disable2fa" class="btn btn-dark">Wyłącz 2FA</a>
+            <a asp-page="./GenerateRecoveryCodes" class="btn btn-dark">Zresetuj kody odzyskiwania</a>
+        }
+
+        <h4>Authenticator app</h4>
+        @if (!Model.HasAuthenticator)
+        {
+            <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-dark">Dodaj aplikację uwierzytelniającą</a>
+        }
+        else
+        {
+            <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-dark">Skonfiguruj aplikację uwierzytelniającą</a>
+            <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-dark">Zresetuj aplikację uwierzytelniającą</a>
+        }
+    }
+    else
+    {
+        <div class="alert alert-danger">
+            <strong>Polityka prywatności i plików cookie nie została zaakceptowana.</strong>
+            <p>Aby włączyć uwierzytelnianie dwuskładnikowe, musisz zaakceptować zasady.</p>
+        </div>
+    }
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

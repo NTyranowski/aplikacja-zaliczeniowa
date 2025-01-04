@@ -42,7 +42,7 @@
 
                         <td>@reservation.SeatsReserved</td>
                         <td>
-                            <a asp-action="Details" asp-controller="Events" asp-route-id="@reservation.Event.Id" class="btn btn-primary btn-sm">
+                            <a asp-action="Details" asp-controller="Events" asp-route-id="@reservation.Event.Id" class="btn btn-secondary btn-sm">
                                 Szczegóły wydarzenia
                             </a>
                             <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#cancelModal-@reservation.Id">
