@@ -4,9 +4,9 @@
     ViewData["Title"] = "Szczegóły wydarzenia";
 }
 
-<div class="container mt-4">
+<div class="container mt-4 mb-4">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card shadow-sm">
                 <div class="card-body text-center">
                     @if (!string.IsNullOrEmpty(Model.ImagePath))
@@ -14,7 +14,7 @@
                         <img src="@Url.Content($"~{Model.ImagePath ?? "/images/events/default.jpg"}")"
                              alt="Plakat wydarzenia"
                              class="img-fluid mb-4"
-                             style="max-height: 300px; object-fit: cover;" />
+                             style="max-height: 200px; object-fit: cover;" />
                     }
                     else
                     {

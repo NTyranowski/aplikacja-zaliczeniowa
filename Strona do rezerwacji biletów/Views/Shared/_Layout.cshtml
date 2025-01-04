@@ -32,6 +32,7 @@
 
         main {
             flex: 1;
+            min-height: 600px;
         }
 
         .navbar {
@@ -46,20 +47,41 @@
                 color: #c7c7c7 !important; /* Akcentowy kolor na hover */
             }
 
-            .navbar-nav .nav-item a{
-
-            }
         .hero-section {
-            background: #f4f4f4; /* Jasnoszare tło */
-            color: #333333; /* Ciemnoszary tekst */
-            padding: 40px 0;
-            text-align: center;
+            position: relative;
+            height: 250px;
+            width: 100%;
+            /*overflow: hidden;*/ /* Ukrycie elementów poza sekcją */
         }
 
-            .hero-section h1 {
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/images/background/background.jpg");
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            filter: blur(8px); /* Rozmycie tylko obrazu tła */
+            z-index: -1; /* Ustawienie za zawartością */
+        }
+
+        .bg-text {
+            position: relative;
+            z-index: 1; /* Wyświetlanie nad tłem */
+            color: white; /* Kolor tekstu */
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .bg-text h1{
+                text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+                font-weight: bold;
                 font-size: 2.5rem;
                 margin-bottom: 15px;
-            }
+        }
 
         footer {
             background-color: #333333; /* Dopasowanie kolorystyki do nagłówka */
@@ -87,12 +109,13 @@
         a:hover {
             color: black;
         }
+
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid ms-3 me-3">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><b>SuperBilet</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -112,15 +135,18 @@
         </nav>
     </header>
     <div class="hero-section">
-        <h1>@ViewData["Title"]</h1>
-        <p>Zarezerwuj swoje miejsce na najważniejszych wydarzeniach!</p>
+        <div class="bg-image"></div>
+        <div class="bg-text">
+            <h1>@ViewData["Title"]</h1>
+            <p>Zarezerwuj swoje miejsce na najważniejszych wydarzeniach!</p>
+        </div>
     </div>
     <div class="container">
         <main role="main" class="py-4">
             @RenderBody()
         </main>
     </div>
-    <footer>
+    <footer class="bg-dark">
         <p>&copy; 2024 Rezerwacja Biletów | <a asp-controller="Home" asp-action="Privacy">Polityka prywatności</a></p>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

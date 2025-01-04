@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\background\\background.jpg",
+      "PackagePath": "staticwebassets\\images\\background\\background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\background\\concert.jpg",
+      "PackagePath": "staticwebassets\\images\\background\\concert.jpg"
+    },
+    {
       "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\events\\8de9eb76-427a-4bcd-9228-d17cdd9deda7.png",
       "PackagePath": "staticwebassets\\images\\events\\8de9eb76-427a-4bcd-9228-d17cdd9deda7.png"
     },
