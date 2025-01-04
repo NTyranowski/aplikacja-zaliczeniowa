@@ -10,5 +10,7 @@
         public int AvailableNormalSeats { get; set; }
         public int AvailableVIPSeats { get; set; }
         public string ImagePath { get; set; }
+        public string CreatorId { get; set; }
+        public ICollection<Reservation> Reservations { get; set; }
     }
 }

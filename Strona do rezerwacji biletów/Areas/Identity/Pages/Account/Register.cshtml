@@ -26,9 +26,9 @@
                 <label asp-for="Input.ConfirmPassword">Potwierdź hasło</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.IsAdmin" class="form-check" type="checkbox" />
-                <label asp-for="Input.IsAdmin">Czy jesteś administratorem wydarzenia?</label>
+            <div class="checkbox mb-1">
+                <input asp-for="Input.IsAdmin" class="form-check-input me-1" />
+                <label asp-for="Input.IsAdmin" class="form-label">Czy jesteś administratorem wydarzenia?</label>
                 <span asp-validation-for="Input.IsAdmin" class="text-danger"></span>
             </div>
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-dark">Zarejestruj</button>

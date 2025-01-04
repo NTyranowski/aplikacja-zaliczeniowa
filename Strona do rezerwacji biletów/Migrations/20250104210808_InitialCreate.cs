@@ -63,7 +63,8 @@ namespace Strona_do_rezerwacji_biletów.Migrations
                     Category = table.Column<string>(type: "text", nullable: false),
                     AvailableNormalSeats = table.Column<int>(type: "integer", nullable: false),
                     AvailableVIPSeats = table.Column<int>(type: "integer", nullable: false),
-                    ImagePath = table.Column<string>(type: "text", nullable: false)
+                    ImagePath = table.Column<string>(type: "text", nullable: false),
+                    CreatorId = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {

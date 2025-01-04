@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration.UserSecrets;
 using Strona_do_rezerwacji_biletów.Data;
 using Strona_do_rezerwacji_biletów.Models;
 using System;
@@ -236,6 +237,12 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                     model.Image.CopyTo(stream);
                 }
 
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (userId == null)
+                {
+                    return Unauthorized();
+                }
+
                 // Tworzenie zmiennej ścieżki
                 string imagePath = $"/images/events/{uniqueFileName}";
                 Event ev = new Event
@@ -247,14 +254,21 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                     Category = model.Category,
                     AvailableNormalSeats = model.AvailableNormalSeats,
                     AvailableVIPSeats = model.AvailableVIPSeats,
-                    ImagePath = imagePath
+                    ImagePath = imagePath,
+                    CreatorId = userId
                 };
+
                 _context.Events.Add(ev);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             else if (model.Image == null)
             {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (userId == null)
+                {
+                    return Unauthorized();
+                }
                 Event ev = new Event
                 {
                     Id = model.Id,
@@ -264,7 +278,8 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                     Category = model.Category,
                     AvailableNormalSeats = model.AvailableNormalSeats,
                     AvailableVIPSeats = model.AvailableVIPSeats,
-                    ImagePath = ""
+                    ImagePath = "",
+                    CreatorId = userId
                 };
                 _context.Events.Add(ev);
                 _context.SaveChanges();
@@ -272,6 +287,131 @@ namespace Strona_do_rezerwacji_biletów.Controllers
             }
             return View(model);
         }
+        [Authorize(Roles = "Admin")]
+        public IActionResult Delete(int id)
+        {
+            var eventToDelete = _context.Events.Find(id);
+            if (eventToDelete == null)
+            {
+                return NotFound();
+            }
+            return View(eventToDelete);
+        }
 
+        // POST: Events/Delete/5
+        [Authorize(Roles = "Admin")]
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var eventToDelete = _context.Events
+                                        .Include(e => e.Reservations) // Załadowanie rezerwacji powiązanych z wydarzeniem
+                                        .FirstOrDefault(e => e.Id == id);
+
+            if (eventToDelete == null)
+            {
+                return NotFound();
+            }
+
+            // Usunięcie rezerwacji związanych z wydarzeniem
+            var reservationsToDelete = eventToDelete.Reservations.ToList();
+            _context.Reservations.RemoveRange(reservationsToDelete);
+
+            // Usunięcie wydarzenia
+            _context.Events.Remove(eventToDelete);
+
+            // Zapisanie zmian w bazie danych
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var ev = _context.Events.FirstOrDefault(e => e.Id == id);
+            if (ev == null)
+            {
+                return NotFound();
+            }
+
+            return View(ev);
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public IActionResult Edit(EventCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Ustaw ścieżkę folderu, w którym zapiszesz plik
+                string uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "events");
+
+                // Upewnij się, że folder istnieje
+                if (!Directory.Exists(uploadFolder))
+                {
+                    Directory.CreateDirectory(uploadFolder);
+                }
+
+                // Generuj unikalną nazwę pliku
+                string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.Image.FileName);
+
+                // Pełna ścieżka do zapisu
+                string filePath = Path.Combine(uploadFolder, uniqueFileName);
+
+                // Zapis pliku
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.Image.CopyTo(stream);
+                }
+
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (userId == null)
+                {
+                    return Unauthorized();
+                }
+
+                // Tworzenie zmiennej ścieżki
+                string imagePath = $"/images/events/{uniqueFileName}";
+                Event ev = new Event
+                {
+                    Id = model.Id,
+                    Title = model.Title,
+                    Description = model.Description,
+                    Date = model.Date,
+                    Category = model.Category,
+                    AvailableNormalSeats = model.AvailableNormalSeats,
+                    AvailableVIPSeats = model.AvailableVIPSeats,
+                    ImagePath = imagePath,
+                    CreatorId = userId
+                };
+
+                _context.Events.Add(ev);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else if (model.Image == null)
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (userId == null)
+                {
+                    return Unauthorized();
+                }
+                Event ev = new Event
+                {
+                    Id = model.Id,
+                    Title = model.Title,
+                    Description = model.Description,
+                    Date = model.Date,
+                    Category = model.Category,
+                    AvailableNormalSeats = model.AvailableNormalSeats,
+                    AvailableVIPSeats = model.AvailableVIPSeats,
+                    ImagePath = "",
+                    CreatorId = userId
+                };
+                _context.Events.Add(ev);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
     }
 }

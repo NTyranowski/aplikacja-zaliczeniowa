@@ -25,14 +25,6 @@
       "PackagePath": "staticwebassets\\images\\background\\concert.jpg"
     },
     {
-      "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\events\\8de9eb76-427a-4bcd-9228-d17cdd9deda7.png",
-      "PackagePath": "staticwebassets\\images\\events\\8de9eb76-427a-4bcd-9228-d17cdd9deda7.png"
-    },
-    {
-      "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\events\\cd699f32-05a0-4c10-a497-34996de23755.jpg",
-      "PackagePath": "staticwebassets\\images\\events\\cd699f32-05a0-4c10-a497-34996de23755.jpg"
-    },
-    {
       "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

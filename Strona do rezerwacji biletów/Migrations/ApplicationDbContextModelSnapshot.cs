@@ -240,6 +240,10 @@ namespace Strona_do_rezerwacji_biletów.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("CreatorId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp with time zone");
 
@@ -342,12 +346,17 @@ namespace Strona_do_rezerwacji_biletów.Migrations
             modelBuilder.Entity("Strona_do_rezerwacji_biletów.Models.Reservation", b =>
                 {
                     b.HasOne("Strona_do_rezerwacji_biletów.Models.Event", "Event")
-                        .WithMany()
+                        .WithMany("Reservations")
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Event");
+                });
+
+            modelBuilder.Entity("Strona_do_rezerwacji_biletów.Models.Event", b =>
+                {
+                    b.Navigation("Reservations");
                 });
 #pragma warning restore 612, 618
         }

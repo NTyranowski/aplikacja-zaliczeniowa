@@ -2,9 +2,20 @@
 @using Microsoft.AspNetCore.Identity
 @inject UserManager<IdentityUser> UserManager
 @{
-    ViewData["Title"] = "Szczegóły wydarzenia";
+    ViewData["Title"] = "Usuwanie wydarzenia";
 }
+<h3>Czy na pewno chcesz usunąć wydarzenie?</h3>
+<!--<div>
+    <h2>Are you sure you want to delete the event: <strong>@Model.Title</strong>?</h2>
+    <p><strong>Date:</strong> @Model.Date</p>
+    <p><strong>Category:</strong> @Model.Category</p>
+    <p><strong>Description:</strong> @Model.Description</p>
+</div>
 
+<form method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="@Url.Action("Index", "Events")" class="btn btn-secondary">Cancel</a>
+</form>-->
 <div class="container mt-4 mb-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -55,22 +66,11 @@
                         }
                     </p>
                     <div class="d-flex justify-content-between mt-4">
-                        <a href="@Url.Action("Index", "Events")" class="btn btn-secondary">
-                            Powrót do wydarzeń
-                        </a>
-                        @if (!(Model.CreatorId == UserManager.GetUserId(User)))
+                        <a href="@Url.Action("Index", "Events")" class="btn btn-secondary">Anuluj</a>
+                        @if (Model.CreatorId == UserManager.GetUserId(User))
                         {
-                            @if (Model.AvailableNormalSeats > 0 || Model.AvailableVIPSeats > 0)
-                            {
-                                <form asp-action="Reserve" asp-route-id="@Model.Id" method="get">
-                                    <button type="submit" class="btn btn-primary">Zarezerwuj!</button>
-                                </form>
-                            }
-                        }
-                        else
-                        {
-                            <form asp-action="Edit" asp-route-id="@Model.Id" method="get">
-                                <button type="submit" class="btn btn-secondary">Edytuj</button>
+                            <form method="post">
+                                <button type="submit" class="btn btn-danger">Usuń</button>
                             </form>
                         }
                     </div>

@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Strona_do_rezerwacji_biletów.Models.Event>
-
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
 @{
     ViewData["Title"] = "Wydarzenia";
     var sortedModel = Model.OrderBy(ev => ev.Date);
@@ -53,6 +54,10 @@
             <th>Dostępne bilety normalne</th>
             <th>Dostępne bilety VIP</th>
             <th>    </th>
+            @if(User.IsInRole("Admin"))
+            {
+                <th></th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -65,9 +70,18 @@
                 <td>@ev.Category</td>
                 <td>@ev.AvailableNormalSeats</td>
                 <td>@ev.AvailableVIPSeats</td>
-                <td>
-                    <a href="@Url.Action("Details", "Events", new { id = ev.Id })" class="btn btn-secondary">Szczegóły wydarzenia</a>
+                <td class="col-1">
+                    <a href="@Url.Action("Details", "Events", new { id = ev.Id })" class="btn btn-secondary btn-sm">Szczegóły wydarzenia</a>
                 </td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td class="col-1">
+                        @if (ev.CreatorId == UserManager.GetUserId(User))
+                        {
+                            <a href="@Url.Action("Delete", "Events", new { id = ev.Id })" class="btn btn-danger btn-sm">Usuń wydarzenie</a>
+                        }
+                    </td>
+                }
             </tr>
         }
         @if (!Model.Any())
