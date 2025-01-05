@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5puOzgJj7oSVlSKTWoiu9OiUhNKDkLgU4OyaNkz2JbY=",
+  "Hash": "CPRBHQbwaQMlOO7oy7zf2WdxyfXwSJRRtHlTRoret2A=",
   "Source": "Strona do rezerwacji biletów",
   "BasePath": "_content/Strona do rezerwacji biletów",
   "Mode": "Default",
@@ -1290,12 +1290,12 @@
       "OriginalItemSpec": "wwwroot\\images\\background\\concert.jpg"
     },
     {
-      "Identity": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\events\\43dadbc8-22e1-47cc-aab7-e8cdec1806d2.png",
+      "Identity": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\background\\tlo_superbilet.png",
       "SourceId": "Strona do rezerwacji biletów",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\",
       "BasePath": "_content/Strona do rezerwacji biletów",
-      "RelativePath": "images/events/43dadbc8-22e1-47cc-aab7-e8cdec1806d2.png",
+      "RelativePath": "images/background/tlo_superbilet.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1306,7 +1306,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\events\\43dadbc8-22e1-47cc-aab7-e8cdec1806d2.png"
+      "OriginalItemSpec": "wwwroot\\images\\background\\tlo_superbilet.png"
+    },
+    {
+      "Identity": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\events\\fb87720d-4e40-4ca4-b539-40c0f1a59d92.png",
+      "SourceId": "Strona do rezerwacji biletów",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\",
+      "BasePath": "_content/Strona do rezerwacji biletów",
+      "RelativePath": "images/events/fb87720d-4e40-4ca4-b539-40c0f1a59d92.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\events\\fb87720d-4e40-4ca4-b539-40c0f1a59d92.png"
     },
     {
       "Identity": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\js\\site.js",

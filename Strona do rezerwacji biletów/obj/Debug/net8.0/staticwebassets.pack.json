@@ -25,8 +25,12 @@
       "PackagePath": "staticwebassets\\images\\background\\concert.jpg"
     },
     {
-      "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\events\\43dadbc8-22e1-47cc-aab7-e8cdec1806d2.png",
-      "PackagePath": "staticwebassets\\images\\events\\43dadbc8-22e1-47cc-aab7-e8cdec1806d2.png"
+      "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\background\\tlo_superbilet.png",
+      "PackagePath": "staticwebassets\\images\\background\\tlo_superbilet.png"
+    },
+    {
+      "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\events\\fb87720d-4e40-4ca4-b539-40c0f1a59d92.png",
+      "PackagePath": "staticwebassets\\images\\events\\fb87720d-4e40-4ca4-b539-40c0f1a59d92.png"
     },
     {
       "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\js\\site.js",

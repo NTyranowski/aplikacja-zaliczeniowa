@@ -13,7 +13,7 @@
     <label for="Description">Opis wydarzenia: </label>
     <textarea class="form-control mb-2" name="Description" value="" required>@Model.Description</textarea>
     <label for="Date">Data wydarzenia: </label>
-    <input class="form-control mb-2" name="Date" type="date" value="@Model.Date" required />
+    <input class="form-control mb-2" name="Date" type="date" value="@Model.Date.ToString("yyyy-MM-dd")" required />
     <label for="Category">Kategoria: </label>
     <select asp-for="Category" asp-items="ViewBag.Category" class="form-control" name="Category" id="Category">
 

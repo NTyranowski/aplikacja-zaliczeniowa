@@ -14,10 +14,11 @@ namespace Strona_do_rezerwacji_biletów.Controllers
     public class EventsController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public EventsController(ApplicationDbContext context)
+        private readonly IWebHostEnvironment _environment;
+        public EventsController(ApplicationDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
+            _environment = environment;
         }
 
         [AllowAnonymous]
@@ -144,7 +145,6 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                 EventId = eventId,
                 UserId = userId,
                 SeatsReserved = vipSeatsReserved + normalSeatsReserved, // Łączna liczba rezerwowanych miejsc
-                IsVIP = vipSeatsReserved > 0, // Zakładając, że rezerwacja dotyczy VIP, jeśli są VIP miejsca
                 SeatIds = string.Join(",", selectedSeats), // Lista miejsc
             };
 
@@ -428,6 +428,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                 // Pełna ścieżka do zapisu
                 string filePath = Path.Combine(uploadFolder, uniqueFileName);
 
+
                 // Zapis pliku
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
@@ -442,47 +443,58 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
                 // Tworzenie zmiennej ścieżki
                 string imagePath = $"/images/events/{uniqueFileName}";
-                Event ev = new Event
-                {
-                    Id = model.Id,
-                    Title = model.Title,
-                    Description = model.Description,
-                    Date = model.Date,
-                    Category = model.Category,
-                    AvailableNormalSeats = model.AvailableNormalSeats,
-                    AvailableVIPSeats = model.AvailableVIPSeats,
-                    ImagePath = imagePath,
-                    CreatorId = userId
-                };
+                Event eventFromDb = _context.Events.FirstOrDefault(x => x.Id == model.Id);
 
-                _context.Events.Add(ev);
+                string webRootPath = _environment.WebRootPath; // np. "wwwroot"
+                string path = eventFromDb.ImagePath?.TrimStart('/');
+                string filToDelPath = Path.Combine(webRootPath, path);
+                if (eventFromDb != null)
+                {
+                    try
+                    {
+                        System.IO.File.Delete(filToDelPath);
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                eventFromDb.Id = model.Id;
+                eventFromDb.Title = model.Title;
+                eventFromDb.Description = model.Description;
+                eventFromDb.Date = model.Date;
+                eventFromDb.Category = model.Category;
+                eventFromDb.AvailableNormalSeats = model.AvailableNormalSeats;
+                eventFromDb.AvailableVIPSeats = model.AvailableVIPSeats;
+                eventFromDb.ImagePath = imagePath;
+                eventFromDb.CreatorId = userId;
+
+                _context.Events.Update(eventFromDb);
+                
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             else if (model.Image == null)
             {
+                var ev = _context.Events.FirstOrDefault(e => e.Id == model.Id);
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 if (userId == null)
                 {
                     return Unauthorized();
                 }
-                Event ev = new Event
-                {
-                    Id = model.Id,
-                    Title = model.Title,
-                    Description = model.Description,
-                    Date = model.Date,
-                    Category = model.Category,
-                    AvailableNormalSeats = model.AvailableNormalSeats,
-                    AvailableVIPSeats = model.AvailableVIPSeats,
-                    ImagePath = "",
-                    CreatorId = userId
-                };
-                _context.Events.Add(ev);
+                ev.Id = model.Id;
+                ev.Title = model.Title;
+                ev.Description = model.Description;
+                ev.Date = model.Date;
+                ev.Category = model.Category;
+                ev.AvailableNormalSeats = model.AvailableNormalSeats;
+                ev.AvailableVIPSeats = model.AvailableVIPSeats;
+                ev.CreatorId = userId;
+                _context.Events.Update(ev);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(model);
+            return View("Details", model.Id);
         }
     }
 }

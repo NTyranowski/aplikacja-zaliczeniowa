@@ -186,7 +186,6 @@ namespace Strona_do_rezerwacji_biletów.Migrations
                     UserId = table.Column<string>(type: "text", nullable: false),
                     EventId = table.Column<int>(type: "integer", nullable: false),
                     SeatsReserved = table.Column<int>(type: "integer", nullable: false),
-                    IsVIP = table.Column<bool>(type: "boolean", nullable: false),
                     SeatIds = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>

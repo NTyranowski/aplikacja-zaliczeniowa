@@ -17,12 +17,11 @@
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th>Wydarzenie</th>
-                    <th>Data</th>
-                    <th>Kategoria</th>
-                    <th>Bilet VIP?</th>
-                    <th>Zarezerwowane bilety</th>
-                    <th>    </th>
+                    <th style="width: 20%;">Tytuł</th>
+                    <th style="width: 10%;">Data</th>
+                    <th style="width: 10%;">Kategoria</th>
+                    <th style="width: 40%;">Miejsca</th>
+                    <th style="width: 20%;"></th>
                 </tr>
             </thead>
             <tbody>
@@ -32,14 +31,6 @@
                         <td>@reservation.Event.Title</td>
                         <td>@reservation.Event.Date.ToString("yyyy-MM-dd")</td>
                         <td>@reservation.Event.Category</td>
-                        @if (reservation.IsVIP ==true){       
-                            <td>TAK</td>
-                        }
-                        else
-                        {
-                            <td>NIE</td>
-                        }
-
                         <td>
                             @{
                                 var seatList = reservation.SeatIds.Split(',');  // Dzielimy SeatIds na tablicę miejsc
@@ -51,7 +42,7 @@
                                     {
                                         // Zamieniamy R1M1-R1M12 na VIP1-VIP12
                                         var vipSeat = $"VIP{seatNumber}";
-                                        return $"<span style='color: gold'>{vipSeat}</span>";  // Złoty kolor dla miejsc VIP
+                                        return $"<span style='background-color: gold'>{vipSeat}</span>";  // Złoty kolor dla miejsc VIP
                                     }
                                     return seat;  // Zwracamy oryginalne miejsce, jeśli nie jest VIP
                                 }).ToList();
@@ -60,8 +51,7 @@
                             }
                             <strong>@seatCount</strong> (@Html.Raw(seatDetailsString))
                         </td>
-
-                        <td>
+                        <td class="gap-1 justify-content-end">
                             <a asp-action="Details" asp-controller="Events" asp-route-id="@reservation.Event.Id" class="btn btn-secondary btn-sm">
                                 Szczegóły wydarzenia
                             </a>

@@ -275,9 +275,6 @@ namespace Strona_do_rezerwacji_biletów.Migrations
                     b.Property<int>("EventId")
                         .HasColumnType("integer");
 
-                    b.Property<bool>("IsVIP")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("SeatIds")
                         .IsRequired()
                         .HasColumnType("text");

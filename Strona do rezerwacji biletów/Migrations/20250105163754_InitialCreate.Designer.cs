@@ -12,7 +12,7 @@ using Strona_do_rezerwacji_biletów.Data;
 namespace Strona_do_rezerwacji_biletów.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250105103216_InitialCreate")]
+    [Migration("20250105163754_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -277,9 +277,6 @@ namespace Strona_do_rezerwacji_biletów.Migrations
 
                     b.Property<int>("EventId")
                         .HasColumnType("integer");
-
-                    b.Property<bool>("IsVIP")
-                        .HasColumnType("boolean");
 
                     b.Property<string>("SeatIds")
                         .IsRequired()
