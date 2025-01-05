@@ -19,7 +19,7 @@
                     }
                     else
                     {
-                        <p class="text-muted">Brak plakatu dla tego wydarzenia.</p>
+                        <p class="text-muted mb-4">Brak plakatu dla tego wydarzenia.</p>
                     }
                     <h1 class="card-title">@Model.Title</h1>
                     <hr>
@@ -63,7 +63,7 @@
                             @if (Model.AvailableNormalSeats > 0 || Model.AvailableVIPSeats > 0)
                             {
                                 <form asp-action="Reserve" asp-route-id="@Model.Id" method="get">
-                                    <button type="submit" class="btn btn-primary">Zarezerwuj!</button>
+                                    <button type="submit" class="btn btn-dark">Zarezerwuj!</button>
                                 </form>
                             }
                         }

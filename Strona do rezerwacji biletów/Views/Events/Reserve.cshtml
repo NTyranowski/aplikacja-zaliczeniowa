@@ -1,20 +1,140 @@
 ﻿@model Strona_do_rezerwacji_biletów.Models.Event
 
-<h1>Rezerwacja biletów</h1>
+@{
+    ViewData["Title"] = "Szczegóły wydarzenia";
+}
 
-<form method="post" action="/Events/Reserve">
-    <input type="hidden" name="eventId" value="@Model.Id" />
-    <p>Wydarzenie: @Model.Title</p>
-    <p>Dostępne bilety normalne: @Model.AvailableNormalSeats</p>
-    <p>Dostępne bilety VIP: @Model.AvailableVIPSeats</p>
-    @if(Model.AvailableVIPSeats>0)
+@{
+    var reservedSeats = ViewBag.ReservedSeats as List<string>;
+}
+
+<h2>@Model.Title</h2>
+<p>@Model.Description</p>
+<p><strong>Data</strong> @Model.Date.ToString("yyyy-MM-dd")</p>
+
+
+<h3>Wybierz miejsca:</h3>
+<div id="seatGrid">
+    @for (int i = 1; i <= 12; i++) // 12 rzędów
     {
-        <label for="VIPticket">Czy chcesz zarezerować miejsce VIP?</label>
+        for (int j = 1; j <= 12; j++) // 12 miejsc w każdym rzędzie
+        {
+            var seatId = $"R{i}M{j}";
+            var seatLabel = (i == 1) ? $"VIP {j}" : seatId; // Pierwszy rząd z VIP, pozostałe normalne miejsca
+            var seatClass = (i == 1) ? "seat vip" : "seat"; // Klasa dla miejsc VIP w pierwszym rzędzie, pozostałe to zwykłe miejsca
 
-        <input name="VIPticket" type="checkbox" value="false" onchange="this.value=this.checked">
-        <p></p>
+            // Sprawdzenie, czy miejsce jest zarezerwowane
+            if (reservedSeats != null && reservedSeats.Contains(seatId))
+            {
+                seatClass += " reserved"; // Dodanie klasy dla zarezerwowanego miejsca
+            }
+
+            <button type="button"
+                    class="@seatClass responsive-button"
+                    data-seat="@seatId"
+            @(reservedSeats != null && reservedSeats.Contains(seatId) ? "disabled" : "")>
+                @seatLabel
+            </button>
+        }
     }
-    <label for="seatsReserved">Zarezerwowane miejsca:</label>
-    <input type="number" name="seatsReserved" min="1" required />
-    <button type="submit" class="btn btn-primary">Rezerwuj</button>
-</form>
+</div>
+
+
+<style>
+    .seat {
+        width: 100%;
+        background-color: #ccc;
+        border: 2px solid #000;
+        text-align: center;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+        .seat.vip {
+            background-color: #FFD700;
+        }
+
+        .seat.selected {
+            background-color: #00e300 !important;
+        }
+
+        .seat.reserved {
+            background-color: red !important;
+            cursor: not-allowed;
+        }
+
+        .seat.selected:hover {
+            background-color: #00ad00 !important;
+        }
+
+        .seat.vip:hover {
+            background-color: #c9aa00;
+        }
+
+        .seat:hover{
+            background-color: darkgrey;
+        }
+
+        .seat:active{
+            cursor: default;
+        }
+
+    #seatGrid {
+        display: grid;
+        position: center;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 5px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .responsive-button{
+        aspect-ratio: 1; /* Stosunek szerokości do wysokości = 1 (kwadrat) */
+        font-size: clamp(0.8rem, 2vw, 1.2rem);
+        transition: transform 0.2s ease;
+    }
+    
+</style>
+
+<div class="d-flex justify-content-between mt-4">
+    <a href="@Url.Action("Index", "Events")" class="btn btn-secondary">
+        Powrót do wydarzeń
+    </a>
+    <!-- Sekcja do dodawania rezerwacji -->
+    <form method="post" asp-controller="Events" asp-action="Reserve">
+        <input type="hidden" name="eventId" value="@Model.Id" />
+        <input type="hidden" id="selectedSeats" name="selectedSeats" />
+
+        <button type="submit" class="btn btn-dark">Rezerwuj</button>
+    </form>
+</div>
+
+<script>
+    // Dodanie wybranych miejsc do formularza
+    var selectedSeats = [];
+    document.querySelectorAll(".seat").forEach(function (button) {
+        button.addEventListener("click", function () {
+            var seatId = this.getAttribute("data-seat");
+            if (this.disabled) return; // Jeśli miejsce jest zablokowane, nie reagujemy na kliknięcie
+
+            // Dodajemy lub usuwamy miejsce z listy
+            if (selectedSeats.includes(seatId)) {
+                selectedSeats = selectedSeats.filter(seat => seat !== seatId);
+                this.classList.remove("selected");
+            } else {
+                selectedSeats.push(seatId);
+                this.classList.add("selected");
+            }
+
+            // Zaktualizowanie ukrytego pola w formularzu
+            document.getElementById("selectedSeats").value = selectedSeats.join(",");
+        });
+    });
+</script>

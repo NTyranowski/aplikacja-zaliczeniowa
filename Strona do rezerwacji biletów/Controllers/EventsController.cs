@@ -65,6 +65,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return View(ev);
         }*/
+
         [HttpGet]
         public IActionResult Details(int id)
         {
@@ -87,59 +88,83 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                 return NotFound();
             }
 
-            // Przekaż dane do widoku
+            // Pobranie wszystkich zarezerwowanych miejsc dla danego wydarzenia
+            var reservedSeats = _context.Reservations
+            .Where(r => r.EventId == id)
+            .AsEnumerable()  // Wymuszenie wykonania po stronie klienta
+            .SelectMany(r => r.SeatIds.Split(','))
+            .ToList();
+
+
+
+            ViewBag.ReservedSeats = reservedSeats;
+
             return View(ev);
         }
 
         [HttpPost]
-        public IActionResult Reserve(int eventId, int seatsReserved, bool VIPticket)
+        public IActionResult Reserve(int eventId, string selectedSeats)
         {
-            // Znajdź wydarzenie w bazie danych
             var ev = _context.Events.FirstOrDefault(e => e.Id == eventId);
             if (ev == null)
             {
                 return NotFound();
             }
 
-            // Sprawdź dostępność miejsc
-            var seatsAvailable= VIPticket ? ev.AvailableVIPSeats : ev.AvailableNormalSeats;
-            
-            if (seatsReserved > seatsAvailable)
+            // Podziel miejsca na VIP i normalne
+            var selectedSeatsArray = selectedSeats.Split(',');
+            var vipSeats = selectedSeatsArray.Where(seat => seat.StartsWith("R1")).ToArray(); // Rząd 1 traktowany jako VIP
+            var normalSeats = selectedSeatsArray.Where(seat => !seat.StartsWith("R1")).ToArray(); // Pozostałe miejsca normalne
+
+            // Liczymy liczbę zarezerwowanych miejsc
+            var vipSeatsReserved = vipSeats.Length;
+            var normalSeatsReserved = normalSeats.Length;
+
+            // Pobranie dostępnych miejsc przed rezerwacją
+            var availableVIPSeats = ev.AvailableVIPSeats;
+            var availableNormalSeats = ev.AvailableNormalSeats;
+
+            // Sprawdzenie dostępności miejsc
+            if (vipSeatsReserved > availableVIPSeats || normalSeatsReserved > availableNormalSeats)
             {
                 ModelState.AddModelError("", "Not enough seats available.");
                 return View(ev);
             }
 
-            // Pobierz ID zalogowanego użytkownika
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userId == null)
             {
                 return Unauthorized();
             }
 
-            // Twórz rezerwację
+            // Tworzenie rezerwacji
             var reservation = new Reservation
             {
                 EventId = eventId,
                 UserId = userId,
-                SeatsReserved = seatsReserved,
-                IsVIP = VIPticket,
+                SeatsReserved = vipSeatsReserved + normalSeatsReserved, // Łączna liczba rezerwowanych miejsc
+                IsVIP = vipSeatsReserved > 0, // Zakładając, że rezerwacja dotyczy VIP, jeśli są VIP miejsca
+                SeatIds = string.Join(",", selectedSeats), // Lista miejsc
             };
 
-            // Zmniejsz liczbę dostępnych miejsc
-            if (reservation.IsVIP)
-            { ev.AvailableVIPSeats -= seatsReserved; }
-            else { ev.AvailableNormalSeats -= seatsReserved; }
+            // Zaktualizowanie liczby dostępnych miejsc w zależności od wybranych typów
+            if (vipSeatsReserved > 0)
+            {
+                ev.AvailableVIPSeats -= vipSeatsReserved;
+            }
+            if (normalSeatsReserved > 0)
+            {
+                ev.AvailableNormalSeats -= normalSeatsReserved;
+            }
 
-                
-            
-
-            // Zapisz rezerwację i zaktualizuj wydarzenie
+            // Zapisanie rezerwacji w bazie danych
             _context.Reservations.Add(reservation);
             _context.SaveChanges();
 
-            // Przekieruj użytkownika do strony potwierdzenia lub listy wydarzeń
-            return RedirectToAction("Index");
+            // Zaktualizowanie danych wydarzenia
+            ev = _context.Events.FirstOrDefault(e => e.Id == eventId);
+
+            return View("Details", ev); // Zwrócenie zaktualizowanego wydarzenia
         }
 
         /*[HttpPost]
@@ -173,6 +198,8 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                 return NotFound();
             }
 
+            ViewBag.TotalReservations = reservations.Sum(r => r.SeatsReserved);
+
             return View(reservations);
         }
 
@@ -191,8 +218,13 @@ namespace Strona_do_rezerwacji_biletów.Controllers
                 {
                     // Powiększ liczbę dostępnych miejsc
                     if (reservation.IsVIP)
-                    { ev.AvailableVIPSeats += reservation.SeatsReserved; }
-                    else { ev.AvailableNormalSeats += reservation.SeatsReserved; }
+                    { 
+                        ev.AvailableVIPSeats += reservation.SeatsReserved; 
+                    }
+                    else 
+                    { 
+                        ev.AvailableNormalSeats += reservation.SeatsReserved; 
+                    }
                 }
 
                 // Usuń rezerwację z bazy danych
@@ -205,11 +237,13 @@ namespace Strona_do_rezerwacji_biletów.Controllers
             // Przekieruj użytkownika do strony z jego rezerwacjami
             return RedirectToAction("MyReservations");
         }
+
         [Authorize(Roles = "Admin")]
         public IActionResult Add()
         {
             return View();
         }
+        
         [Authorize(Roles ="Admin") ]
         [HttpPost]
         public IActionResult Add(EventCreate model)

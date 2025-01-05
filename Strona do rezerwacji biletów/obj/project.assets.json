@@ -8597,19 +8597,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nikof\\.nuget\\packages\\": {}
+    "C:\\Users\\Bartek\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
+      "projectUniqueName": "C:\\Users\\Bartek\\OneDrive - Office 365\\Pulpit\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
       "projectName": "Strona do rezerwacji biletów",
-      "projectPath": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
-      "packagesPath": "C:\\Users\\nikof\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\obj\\",
+      "projectPath": "C:\\Users\\Bartek\\OneDrive - Office 365\\Pulpit\\Strona do rezerwacji biletów\\Strona do rezerwacji biletów.csproj",
+      "packagesPath": "C:\\Users\\Bartek\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bartek\\OneDrive - Office 365\\Pulpit\\Strona do rezerwacji biletów\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nikof\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bartek\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8629,11 +8629,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -8700,7 +8695,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

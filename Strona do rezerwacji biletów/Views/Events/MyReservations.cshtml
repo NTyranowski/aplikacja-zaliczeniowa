@@ -40,7 +40,27 @@
                             <td>NIE</td>
                         }
 
-                        <td>@reservation.SeatsReserved</td>
+                        <td>
+                            @{
+                                var seatList = reservation.SeatIds.Split(',');  // Dzielimy SeatIds na tablicę miejsc
+                                var seatCount = seatList.Length;  // Liczymy liczbę miejsc
+                                var seatDetails = seatList.Select(seat =>
+                                {
+                                    // Sprawdzamy, czy miejsce pasuje do wzorca R1M1-R1M12
+                                    if (seat.StartsWith("R1M") && int.TryParse(seat.Substring(3), out int seatNumber) && seatNumber >= 1 && seatNumber <= 12)
+                                    {
+                                        // Zamieniamy R1M1-R1M12 na VIP1-VIP12
+                                        var vipSeat = $"VIP{seatNumber}";
+                                        return $"<span style='color: gold'>{vipSeat}</span>";  // Złoty kolor dla miejsc VIP
+                                    }
+                                    return seat;  // Zwracamy oryginalne miejsce, jeśli nie jest VIP
+                                }).ToList();
+
+                                var seatDetailsString = string.Join(", ", seatDetails);  // Łączymy miejsca w ciąg
+                            }
+                            <strong>@seatCount</strong> (@Html.Raw(seatDetailsString))
+                        </td>
+
                         <td>
                             <a asp-action="Details" asp-controller="Events" asp-route-id="@reservation.Event.Id" class="btn btn-secondary btn-sm">
                                 Szczegóły wydarzenia

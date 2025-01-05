@@ -50,9 +50,9 @@
 
         .hero-section {
             position: relative;
-            height: 250px;
+            height: 200px;
+            min-height: 200px;
             width: 100%;
-            /*overflow: hidden;*/ /* Ukrycie elementów poza sekcją */
         }
 
         .bg-image {
@@ -63,7 +63,7 @@
             height: 100%;
             background-image: url("/images/background/background.jpg");
             background-position: center;
-            background-size: 100% 100%;
+            background-size: cover;
             background-repeat: no-repeat;
             filter: blur(8px); /* Rozmycie tylko obrazu tła */
             z-index: -1; /* Ustawienie za zawartością */
@@ -156,7 +156,9 @@
         </main>
     </div>
     <footer class="bg-dark">
-        <p>&copy; 2024 Rezerwacja Biletów | <a asp-controller="Home" asp-action="Privacy">Polityka prywatności</a></p>
+        <div class="p-1">
+            &copy; 2024 Rezerwacja Biletów | <a asp-controller="Home" asp-action="Privacy">Polityka prywatności</a>
+        </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
