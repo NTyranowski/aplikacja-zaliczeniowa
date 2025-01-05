@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|c:\\users\\nikof\\onedrive\\pulpit\\aplikacja-zaliczeniowa\\strona do rezerwacji bilet\u00F3w\\views\\events\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|solutionrelative:views\\events\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|c:\\users\\nikof\\onedrive\\pulpit\\aplikacja-zaliczeniowa\\strona do rezerwacji bilet\u00F3w\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|solutionrelative:controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|c:\\users\\nikof\\onedrive\\pulpit\\aplikacja-zaliczeniowa\\strona do rezerwacji bilet\u00F3w\\views\\events\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|solutionrelative:views\\events\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|c:\\users\\nikof\\onedrive\\pulpit\\aplikacja-zaliczeniowa\\strona do rezerwacji bilet\u00F3w\\views\\events\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|solutionrelative:views\\events\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|c:\\users\\nikof\\onedrive\\pulpit\\aplikacja-zaliczeniowa\\strona do rezerwacji bilet\u00F3w\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -126,7 +126,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -138,8 +138,7 @@
               "RelativeToolTip": "Views\\Events\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-02T21:22:26.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-02T21:22:26.343Z"
             },
             {
               "$type": "Document",
@@ -151,8 +150,7 @@
               "RelativeToolTip": "Views\\Events\\Delete.cshtml",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAAIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-04T16:01:26.49Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T16:01:26.49Z"
             },
             {
               "$type": "Document",
@@ -164,18 +162,17 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-04T15:15:35.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T15:15:35.239Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Views\\Events\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Events\\Index.cshtml",
               "ToolTip": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Views\\Events\\Index.cshtml",
               "RelativeToolTip": "Views\\Events\\Index.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAC4AAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAFIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-27T12:46:42.5Z",
               "EditorCaption": ""
@@ -190,8 +187,7 @@
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-04T11:25:54.669Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T11:25:54.669Z"
             },
             {
               "$type": "Document",
@@ -203,18 +199,17 @@
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-03T20:09:58.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T20:09:58.82Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EventsController.cs",
               "DocumentMoniker": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Controllers\\EventsController.cs",
               "RelativeDocumentMoniker": "Controllers\\EventsController.cs",
               "ToolTip": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Controllers\\EventsController.cs",
               "RelativeToolTip": "Controllers\\EventsController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAADgvxcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAADgvxUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-27T12:49:28.545Z",
               "EditorCaption": ""
@@ -229,8 +224,7 @@
               "RelativeToolTip": "Models\\EventCreate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T20:50:54.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-02T20:50:54.977Z"
             },
             {
               "$type": "Document",
@@ -242,8 +236,7 @@
               "RelativeToolTip": "Views\\Events\\Add.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-02T20:41:12.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-02T20:41:12.639Z"
             },
             {
               "$type": "Document",
@@ -255,12 +248,11 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-03T18:27:07.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T18:27:07.369Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Views\\Events\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Events\\Edit.cshtml",
@@ -268,8 +260,7 @@
               "RelativeToolTip": "Views\\Events\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-04T19:03:07.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T19:03:07.704Z"
             },
             {
               "$type": "Document",
@@ -281,8 +272,7 @@
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-04T11:23:05.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T11:23:05.022Z"
             },
             {
               "$type": "Document",
@@ -294,8 +284,7 @@
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-04T11:46:37.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T11:46:37.255Z"
             },
             {
               "$type": "Document",
@@ -307,8 +296,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T18:27:02.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T18:27:02.593Z"
             },
             {
               "$type": "Document",
@@ -320,8 +308,7 @@
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAACNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-04T11:27:13.257Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T11:27:13.257Z"
             },
             {
               "$type": "Document",
@@ -333,8 +320,7 @@
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-04T11:23:04.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T11:23:04.92Z"
             },
             {
               "$type": "Document",
@@ -346,8 +332,7 @@
               "RelativeToolTip": "Models\\Event.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T20:43:54.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-02T20:43:54.081Z"
             },
             {
               "$type": "Document",
@@ -371,8 +356,7 @@
               "RelativeToolTip": "Models\\Reservation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T17:31:59.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T17:31:59.858Z"
             },
             {
               "$type": "Document",
@@ -384,8 +368,7 @@
               "RelativeToolTip": "Views\\Events\\MyReservations.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAAADYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-03T19:21:55.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T19:21:55.755Z"
             },
             {
               "$type": "Document",
