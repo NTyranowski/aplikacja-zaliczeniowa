@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration.UserSecrets;
+using Newtonsoft.Json.Linq;
 using Strona_do_rezerwacji_biletów.Data;
 using Strona_do_rezerwacji_biletów.Models;
 using System;
+using System.Composition;
 using System.Security.Claims;
 
 namespace Strona_do_rezerwacji_biletów.Controllers
@@ -377,7 +380,10 @@ namespace Strona_do_rezerwacji_biletów.Controllers
             ViewData["Category"] = new SelectList(new List<SelectListItem>
             {
                 new SelectListItem { Value = "Sport", Text = "Sport" },
-                new SelectListItem { Value = "Muzyka", Text = "Muzyka" },
+                new SelectListItem { Value = "Koncert", Text = "Koncert" },
+                new SelectListItem { Value = "Teatr", Text = "Teatr" },
+                new SelectListItem { Value = "Widowisko", Text = "Widowisko" },
+                new SelectListItem { Value = "Wystawa", Text = "Wystawa" },
                 new SelectListItem { Value = "Inne", Text = "Inne" }
             }, "Value", "Text");
             Event ev = _context.Events.FirstOrDefault(e => e.Id == id);

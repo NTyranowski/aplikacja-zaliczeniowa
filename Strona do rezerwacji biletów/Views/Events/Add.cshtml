@@ -10,13 +10,16 @@
     <label for="Title">Nazwa wydarzenia: </label>
     <input class="form-control mb-2" id="Title" name="Title" type="text" required />
     <label for="Description">Opis wydarzenia: </label>
-    <textarea class="form-control mb-2" name="Description" required></textarea>
+    <textarea class="form-control mb-2" name="Description" style="height: 200px; min-height: 200px; max-height: 200px;" required></textarea>
     <label for="Date">Data wydarzenia: </label>
     <input class="form-control mb-2" name="Date" type="date" required />
     <label for="Category">Kategoria: </label>
     <select class="form-control" name="Category" id="Category">
         <option value="Sport">Sport</option>
-        <option value="Muzyka">Muzyka</option>
+        <option value="Koncert">Koncert</option>
+        <option value="Teatr">Teatr</option>
+        <option value="Widowisko">Widowisko</option>
+        <option value="Wystawa">Wystawa</option>
         <option value="Inne" selected>Inne</option>
     </select>
     <label for="Image" class="form-label"></label>
