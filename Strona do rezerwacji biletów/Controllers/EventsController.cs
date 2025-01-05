@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration.UserSecrets;
 using Strona_do_rezerwacji_biletów.Data;
@@ -113,8 +114,8 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             // Podziel miejsca na VIP i normalne
             var selectedSeatsArray = selectedSeats.Split(',');
-            var vipSeats = selectedSeatsArray.Where(seat => seat.StartsWith("R1")).ToArray(); // Rząd 1 traktowany jako VIP
-            var normalSeats = selectedSeatsArray.Where(seat => !seat.StartsWith("R1")).ToArray(); // Pozostałe miejsca normalne
+            var vipSeats = selectedSeatsArray.Where(seat => seat.StartsWith("R1M")).ToArray(); // Rząd 1 traktowany jako VIP
+            var normalSeats = selectedSeatsArray.Where(seat => !seat.StartsWith("R1M")).ToArray(); // Pozostałe miejsca normalne
 
             // Liczymy liczbę zarezerwowanych miejsc
             var vipSeatsReserved = vipSeats.Length;
@@ -207,32 +208,43 @@ namespace Strona_do_rezerwacji_biletów.Controllers
         public IActionResult CancelReservation(int id)
         {
             // Znajdź rezerwację na podstawie jej ID
-            var reservation = _context.Reservations.Find(id);
+            var reservation = _context.Reservations.FirstOrDefault(r => r.Id == id);
 
-            if (reservation != null)
+            if (reservation == null)
             {
-                // Znajdź powiązane wydarzenie
-                var ev = _context.Events.FirstOrDefault(e => e.Id == reservation.EventId);
-
-                if (ev != null)
-                {
-                    // Powiększ liczbę dostępnych miejsc
-                    if (reservation.IsVIP)
-                    { 
-                        ev.AvailableVIPSeats += reservation.SeatsReserved; 
-                    }
-                    else 
-                    { 
-                        ev.AvailableNormalSeats += reservation.SeatsReserved; 
-                    }
-                }
-
-                // Usuń rezerwację z bazy danych
-                _context.Reservations.Remove(reservation);
-
-                // Zapisz zmiany w bazie danych
-                _context.SaveChanges();
+                // Jeśli rezerwacja nie istnieje, zwróć 404
+                return NotFound();
             }
+
+            // Znajdź powiązane wydarzenie
+            var ev = _context.Events.FirstOrDefault(e => e.Id == reservation.EventId);
+
+            if (ev == null)
+            {
+                // Jeśli wydarzenie nie istnieje, zwróć 404
+                return NotFound();
+            }
+
+            // Rozdzielenie miejsc na VIP i normalne
+            var reservedSeatsArray = reservation.SeatIds.Split(',');
+            var vipSeats = reservedSeatsArray.Where(seat => seat.StartsWith("R1M")).ToArray();
+            var normalSeats = reservedSeatsArray.Where(seat => !seat.StartsWith("R1M")).ToArray();
+
+            // Aktualizacja dostępnych miejsc na podstawie zwracanych miejsc
+            if (vipSeats.Any())
+            {
+                ev.AvailableVIPSeats += vipSeats.Length;
+            }
+            if (normalSeats.Any())
+            {
+                ev.AvailableNormalSeats += normalSeats.Length;
+            }
+
+            // Usuń rezerwację z bazy danych
+            _context.Reservations.Remove(reservation);
+
+            // Zapisz zmiany w bazie danych
+            _context.SaveChanges();
 
             // Przekieruj użytkownika do strony z jego rezerwacjami
             return RedirectToAction("MyReservations");
@@ -362,13 +374,38 @@ namespace Strona_do_rezerwacji_biletów.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var ev = _context.Events.FirstOrDefault(e => e.Id == id);
+            ViewData["Category"] = new SelectList(new List<SelectListItem>
+            {
+                new SelectListItem { Value = "Sport", Text = "Sport" },
+                new SelectListItem { Value = "Muzyka", Text = "Muzyka" },
+                new SelectListItem { Value = "Inne", Text = "Inne" }
+            }, "Value", "Text");
+            Event ev = _context.Events.FirstOrDefault(e => e.Id == id);
+            /*
+             *         public string Title { get; set; }
+        public DateTime Date { get; set; }
+        public string Description { get; set; }
+        public string Category { get; set; }
+        public int AvailableNormalSeats { get; set; }
+        public int AvailableVIPSeats { get; set; }
+             */
+            EventCreate model = new EventCreate
+            {
+                AvailableNormalSeats = ev.AvailableNormalSeats,
+                Title = ev.Title,
+                Description = ev.Description,
+                Date = ev.Date,
+                Category = ev.Category,
+                AvailableVIPSeats = ev.AvailableVIPSeats,
+                Id = ev.Id
+
+            };
             if (ev == null)
             {
                 return NotFound();
             }
 
-            return View(ev);
+            return View(model);
         }
         [Authorize(Roles = "Admin")]
         [HttpPost]

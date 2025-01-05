@@ -7,23 +7,21 @@
 <h1>Edytowanie wydarzenia</h1>
 
 <form class="col-3" method="post" asp-action="Edit" enctype="multipart/form-data">
+    <input type="hidden" name="Id" value="@Model.Id" />
     <label for="Title">Nazwa wydarzenia: </label>
     <input class="form-control mb-2" id="Title" name="Title" type="text" value="@Model.Title" required />
     <label for="Description">Opis wydarzenia: </label>
-    <textarea class="form-control mb-2" name="Description" value="@Model.Description" required></textarea>
+    <textarea class="form-control mb-2" name="Description" value="" required>@Model.Description</textarea>
     <label for="Date">Data wydarzenia: </label>
     <input class="form-control mb-2" name="Date" type="date" value="@Model.Date" required />
     <label for="Category">Kategoria: </label>
-    <select class="form-control" name="Category" id="Category">
-        <option value="Sport">Sport</option>
-        <option value="Muzyka">Muzyka</option>
-        <option value="Inne">Inne</option>
+    <select asp-for="Category" asp-items="ViewBag.Category" class="form-control" name="Category" id="Category">
+
     </select>
     <label for="Image" class="form-label"></label>
     <input class="form-control mb-2" name="Image" type="file" />
-    <label for="AvailableNormalSeats">Dostępne bilety normalne: </label>
-    <input class="form-control mb-2" name="AvailableNormalSeats" type="number" min="1" required />
-    <label for="AvailableVIPSeats">Dostępne bilety VIP: </label>
-    <input class="form-control mb-2" name="AvailableVIPSeats" type="number" default="0" />
+    <p>Dodanie zdjęcia spowoduje podmienienie starego</p>
+    <input class="form-control mb-2" name="AvailableNormalSeats" type="hidden" value="@Model.AvailableNormalSeats" />
+    <input class="form-control mb-2" name="AvailableVIPSeats" type="hidden" value="@Model.AvailableVIPSeats" />
     <button type="submit" class="btn btn-dark">Edytuj</button>
 </form>

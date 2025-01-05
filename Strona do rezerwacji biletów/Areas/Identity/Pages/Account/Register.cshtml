@@ -3,13 +3,12 @@
 @{
     ViewData["Title"] = "Rejstracja";
 }
-
+<h2>Stwórz nowe konto.</h2>
+<hr />
 
 <div class="row">
     <div class="col-md-4">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Stwórz nowe konto.</h2>
-            <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
                 <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
@@ -34,7 +33,7 @@
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-dark">Zarejestruj</button>
         </form>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+    <!--<div class="col-md-6 col-md-offset-2">
         <section>
             <h3>Użyj innej usługi, aby się zarejestrować</h3>
             <hr />
@@ -63,7 +62,7 @@
                 }
             }
         </section>
-    </div>
+    </div>-->
 </div>
 
 @section Scripts {

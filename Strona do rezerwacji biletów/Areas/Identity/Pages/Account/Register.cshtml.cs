@@ -88,9 +88,9 @@ namespace Strona_do_rezerwacji_biletów.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "{0} musi mieć co najmniej {2} i maksymalnie {1} znaków.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Hasło")]
             public string Password { get; set; }
 
             /// <summary>
@@ -98,10 +98,10 @@ namespace Strona_do_rezerwacji_biletów.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "Potwierdź hasło")]
+            [Compare("Password", ErrorMessage = "Hasło i hasło potwierdzające nie są takie same.")]
             public string ConfirmPassword { get; set; }
-            [Display(Name = "Are you an admin?")]
+            [Display(Name = "Czy jesteś administratorem wydarzenia?")]
             public bool IsAdmin { get; set; }
         }
 
@@ -126,7 +126,7 @@ namespace Strona_do_rezerwacji_biletów.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User created a new account with password.");
+                    _logger.LogInformation("Użytkownik utworzył nowe konto z hasłem.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -137,8 +137,8 @@ namespace Strona_do_rezerwacji_biletów.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    await _emailSender.SendEmailAsync(Input.Email, "Potwierdź swój adres e-mail",
+                        $"Aby potwierdzić swoje konto <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>kliknij tutaj</a>.");
                     if(Input.IsAdmin)
                     {
                         if (_roleManager.Roles.Where(x => x.Name == "Admin").Count() == 0)

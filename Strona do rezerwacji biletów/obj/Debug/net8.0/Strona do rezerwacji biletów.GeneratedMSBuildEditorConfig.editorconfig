@@ -17,127 +17,131 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Strona_do_rezerwacji_biletów
 build_property.RootNamespace = Strona_do_rezerwacji_biletów
-build_property.ProjectDir = C:\Users\Bartek\OneDrive - Office 365\Pulpit\Strona do rezerwacji biletów\
+build_property.ProjectDir = C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Bartek\OneDrive - Office 365\Pulpit\Strona do rezerwacji biletów
+build_property.MSBuildProjectDirectory = C:\Users\nikof\OneDrive\Pulpit\aplikacja-zaliczeniowa\Strona do rezerwacji biletów
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRXh0ZXJuYWxMb2dpbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Events/Add.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Events/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Events/Delete.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Events/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Events/Details.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Events/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Events/Edit.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Events/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Events/Index.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Events/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Events/MyReservations.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Events/MyReservations.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXE15UmVzZXJ2YXRpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Events/Reserve.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Events/Reserve.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXFJlc2VydmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Home/Privacy.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Shared/Error.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/_ViewImports.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/_ViewStart.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bartek/OneDrive - Office 365/Pulpit/Strona do rezerwacji biletów/Views/Shared/_Layout.cshtml]
+[C:/Users/nikof/OneDrive/Pulpit/aplikacja-zaliczeniowa/Strona do rezerwacji biletów/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-88rsueg5wp

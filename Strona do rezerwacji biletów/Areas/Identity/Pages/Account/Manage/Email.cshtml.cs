@@ -69,7 +69,7 @@ namespace Strona_do_rezerwacji_biletów.Areas.Identity.Pages.Account.Manage
             /// </summary>
             [Required]
             [EmailAddress]
-            [Display(Name = "New email")]
+            [Display(Name = "Nowy email")]
             public string NewEmail { get; set; }
         }
 
@@ -164,7 +164,7 @@ namespace Strona_do_rezerwacji_biletów.Areas.Identity.Pages.Account.Manage
                 "Confirm your email",
                 $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
-            StatusMessage = "Verification email sent. Please check your email.";
+            StatusMessage = "E-mail weryfikacyjny został wysłany. Sprawdź swoją pocztę.";
             return RedirectToPage();
         }
     }
