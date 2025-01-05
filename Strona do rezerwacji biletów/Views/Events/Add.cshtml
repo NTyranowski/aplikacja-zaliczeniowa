@@ -6,7 +6,7 @@
 
 <h1>Dodawanie wydarzenia</h1>
 
-<form class="col-3" method="post" action="/Events/Add" enctype="multipart/form-data">
+<form class="col-3" method="post" asp-controller="Events" asp-action="Add" enctype="multipart/form-data">
     <label for="Title">Nazwa wydarzenia: </label>
     <input class="form-control mb-2" id="Title" name="Title" type="text" required />
     <label for="Description">Opis wydarzenia: </label>
@@ -26,5 +26,5 @@
     <input class="form-control mb-2" name="Image" type="file" />
     <input class="form-control mb-2" name="AvailableNormalSeats" type="hidden" value="132" />
     <input class="form-control mb-2" name="AvailableVIPSeats" type="hidden" value="12" />
-    <button type="submit" class="btn btn-dark">Utworz</button>
+    <button type="submit" class="btn btn-dark">Utwórz</button>
 </form>

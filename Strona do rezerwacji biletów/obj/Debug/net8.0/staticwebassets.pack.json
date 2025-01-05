@@ -29,6 +29,14 @@
       "PackagePath": "staticwebassets\\images\\background\\tlo_superbilet.png"
     },
     {
+      "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\events\\0a5472cd-6f3f-490f-a59c-7ff114184d98.jpg",
+      "PackagePath": "staticwebassets\\images\\events\\0a5472cd-6f3f-490f-a59c-7ff114184d98.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\events\\e13d3344-cf95-4301-8a07-b661f822dbb0.jpg",
+      "PackagePath": "staticwebassets\\images\\events\\e13d3344-cf95-4301-8a07-b661f822dbb0.jpg"
+    },
+    {
       "Id": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji biletów\\wwwroot\\images\\events\\fb87720d-4e40-4ca4-b539-40c0f1a59d92.png",
       "PackagePath": "staticwebassets\\images\\events\\fb87720d-4e40-4ca4-b539-40c0f1a59d92.png"
     },

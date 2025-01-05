@@ -70,7 +70,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return View(ev);
         }*/
-
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Details(int id)
         {
@@ -82,7 +82,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return View(ev);
         }
-
+        [Authorize]
         [HttpGet]
         public IActionResult Reserve(int id)
         {
@@ -106,7 +106,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return View(ev);
         }
-
+        [Authorize]
         [HttpPost]
         public IActionResult Reserve(int eventId, string selectedSeats)
         {
@@ -190,6 +190,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return RedirectToAction("Index");
         }*/
+        [Authorize]
         public IActionResult MyReservations()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -206,7 +207,7 @@ namespace Strona_do_rezerwacji_biletów.Controllers
 
             return View(reservations);
         }
-
+        [Authorize]
         [HttpPost]
         public IActionResult CancelReservation(int id)
         {

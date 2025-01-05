@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|c:\\users\\nikof\\onedrive\\pulpit\\aplikacja-zaliczeniowa\\strona do rezerwacji bilet\u00F3w\\views\\events\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|solutionrelative:views\\events\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|c:\\users\\nikof\\onedrive\\pulpit\\aplikacja-zaliczeniowa\\strona do rezerwacji bilet\u00F3w\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|solutionrelative:controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|c:\\users\\nikof\\onedrive\\pulpit\\aplikacja-zaliczeniowa\\strona do rezerwacji bilet\u00F3w\\views\\events\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|solutionrelative:views\\events\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B22AD92-344E-4CAB-9226-DCDEBF55C756}|Strona do rezerwacji bilet\u00F3w.csproj|c:\\users\\nikof\\onedrive\\pulpit\\aplikacja-zaliczeniowa\\strona do rezerwacji bilet\u00F3w\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -162,7 +162,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
@@ -191,13 +191,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Add.cshtml",
               "DocumentMoniker": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Views\\Events\\Add.cshtml",
               "RelativeDocumentMoniker": "Views\\Events\\Add.cshtml",
               "ToolTip": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Views\\Events\\Add.cshtml",
               "RelativeToolTip": "Views\\Events\\Add.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-02T20:41:12.639Z",
               "EditorCaption": ""
@@ -254,6 +254,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EventsController.cs",
+              "DocumentMoniker": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Controllers\\EventsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EventsController.cs",
+              "ToolTip": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Controllers\\EventsController.cs",
+              "RelativeToolTip": "Controllers\\EventsController.cs",
+              "ViewState": "AgIAAIMBAAAAAAAAAAAQwEgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T12:49:28.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 11,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Data\\ApplicationDbContext.cs",
@@ -275,19 +288,6 @@
               "ViewState": "AgIAAAMAAAAAAAAAAAAAwAoAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-02T20:43:54.081Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EventsController.cs",
-              "DocumentMoniker": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Controllers\\EventsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EventsController.cs",
-              "ToolTip": "C:\\Users\\nikof\\OneDrive\\Pulpit\\aplikacja-zaliczeniowa\\Strona do rezerwacji bilet\u00F3w\\Controllers\\EventsController.cs",
-              "RelativeToolTip": "Controllers\\EventsController.cs",
-              "ViewState": "AgIAAFoBAAAAAAAAAAAqwIkBAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T12:49:28.545Z",
               "EditorCaption": ""
             },
             {
